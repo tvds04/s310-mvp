@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Provide Document Feedback — Project Future</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="homepage.html">
+        <span class="logo-mark" aria-hidden="true">PF</span>
+        <span>Project Future</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-home" href="homepage.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="submit-client-application.html">Client App</a>
+        <a href="submit-student-application.html">Student App</a>
+        <a href="create-project.html">Create Project</a>
+        <a href="accept-reject-project.html">Projects</a>
+        <a href="accept-reject-student-applications.html">Students</a>
+        <a href="form-teams.html">Teams</a>
+        <a href="record-client-interview.html">Interview</a>
+        <a href="submit-authorization-document.html">Auth Doc</a>
+        <a href="send-team-formed-message.html">Team Msg</a>
+        <a href="submit-project-document-draft.html">Draft</a>
+        <a href="provide-document-feedback.html">TC Feedback</a>
+        <a href="submit-final-documents-request-eval.html">Finals</a>
+        <a href="submit-client-feedback.html">Client FB</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap">
+    <h1 class="page-title">Provide Document Feedback</h1>
+    <p class="page-subtitle">Technology Consultant: review pending drafts, add feedback, save a draft, or submit final feedback to the team.</p>
+
+    <section class="card">
+      <h2>Pending project drafts (sortable in production)</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Submission date</th>
+              <th>Project ID</th>
+              <th>Document ID</th>
+              <th>File</th>
+              <th>View</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026-04-04</td>
+              <td>PRJ-402</td>
+              <td>DOC-7781</td>
+              <td>Charter_Draft_v2.docx</td>
+              <td><a href="#">Open / download</a></td>
+            </tr>
+            <tr>
+              <td>2026-04-02</td>
+              <td>PRJ-410</td>
+              <td>DOC-7802</td>
+              <td>Report_Draft_v1.pdf</td>
+              <td><a href="#">Open / download</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <form class="card" action="#" method="post">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="review-doc" class="required">Select draft to review</label>
+          <select id="review-doc" name="document_id" required>
+            <option value="">— Select —</option>
+            <option value="doc-7781">DOC-7781 — PRJ-402 — Charter_Draft_v2.docx</option>
+            <option value="doc-7802">DOC-7802 — PRJ-410 — Report_Draft_v1.pdf</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="tc-feedback" class="required">TC feedback</label>
+          <textarea id="tc-feedback" class="feedback-area" name="tc_feedback" required placeholder="Specific, actionable feedback for the participant team."></textarea>
+          <p class="hint">Rich text in production; this prototype uses a plain text area.</p>
+        </div>
+      </div>
+      <p class="notice notice-info">Saving stores an unpublished draft. Final submission locks the feedback and notifies the team.</p>
+      <div class="btn-group">
+        <button type="submit" class="btn btn-secondary" name="action" value="draft" formnovalidate>Save draft</button>
+        <button type="submit" class="btn btn-primary" name="action" value="submit">Submit feedback</button>
+      </div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <a href="#">Contact Info</a>
+    <a href="#">Help</a>
+    <a href="homepage.html">Logout</a>
+  </footer>
+</body>
+</html>

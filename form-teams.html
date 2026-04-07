@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Teams — Project Future</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="homepage.html">
+        <span class="logo-mark" aria-hidden="true">PF</span>
+        <span>Project Future</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-home" href="homepage.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="submit-client-application.html">Client App</a>
+        <a href="submit-student-application.html">Student App</a>
+        <a href="create-project.html">Create Project</a>
+        <a href="accept-reject-project.html">Projects</a>
+        <a href="accept-reject-student-applications.html">Students</a>
+        <a href="form-teams.html">Teams</a>
+        <a href="record-client-interview.html">Interview</a>
+        <a href="submit-authorization-document.html">Auth Doc</a>
+        <a href="send-team-formed-message.html">Team Msg</a>
+        <a href="submit-project-document-draft.html">Draft</a>
+        <a href="provide-document-feedback.html">TC Feedback</a>
+        <a href="submit-final-documents-request-eval.html">Finals</a>
+        <a href="submit-client-feedback.html">Client FB</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap">
+    <h1 class="page-title">Form Teams</h1>
+    <p class="page-subtitle">Assign accepted students to approved projects, update roles, and save team composition.</p>
+
+    <form action="#" method="post">
+      <section class="card">
+        <h2>Project details</h2>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="select-project" class="required">Select project</label>
+            <select id="select-project" name="project_id" required>
+              <option value="">— Select —</option>
+              <option value="prj-402">PRJ-402 — Acme Corp Data Migration</option>
+              <option value="prj-410">PRJ-410 — Bloom Retail Inventory</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="client-details">Client details</label>
+            <input type="text" id="client-details" name="client_details" value="Acme Corp — jane.doe@acmecorp.example" readonly>
+          </div>
+          <div class="form-row">
+            <label for="project-id-display">Project ID</label>
+            <input type="text" id="project-id-display" name="project_id_display" value="PRJ-402" readonly>
+          </div>
+          <div class="form-row">
+            <label for="project-info">Project info</label>
+            <textarea id="project-info" name="project_info" readonly>Phased migration plan, stakeholder map, and weekly checkpoints with TC.</textarea>
+          </div>
+        </div>
+      </section>
+
+      <div class="split-sections form-teams-grid">
+        <section class="card">
+          <h2>Accepted students</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Student info</th>
+                  <th>Status</th>
+                  <th>Assign</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jordan Lee</td>
+                  <td>Senior · Finance</td>
+                  <td>Accepted</td>
+                  <td>
+                    <button type="button" class="btn btn-success" style="padding:0.35rem 0.6rem; font-size:0.85rem;">✓</button>
+                    <button type="button" class="btn btn-danger" style="padding:0.35rem 0.6rem; font-size:0.85rem;">✕</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Riley Chen</td>
+                  <td>Sophomore · Accounting</td>
+                  <td>Accepted</td>
+                  <td>
+                    <button type="button" class="btn btn-success" style="padding:0.35rem 0.6rem; font-size:0.85rem;">✓</button>
+                    <button type="button" class="btn btn-danger" style="padding:0.35rem 0.6rem; font-size:0.85rem;">✕</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="hint">Use ✓ to add to the selected project’s roster (prototype). Rejected applicants are hidden from this list in production.</p>
+        </section>
+
+        <section class="card">
+          <h2>Current team members</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Update</th>
+                  <th>Remove</th>
+                  <th>Member ID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jordan Lee</td>
+                  <td>
+                    <select name="role_m1" aria-label="Role for Jordan Lee">
+                      <option value="pm">Project Lead</option>
+                      <option value="ba" selected>Business Analyst</option>
+                      <option value="dev">Technical Analyst</option>
+                    </select>
+                  </td>
+                  <td><button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.6rem; font-size:0.85rem;">Update</button></td>
+                  <td><button type="submit" class="btn btn-outline" style="padding:0.35rem 0.6rem; font-size:0.85rem; color: var(--pf-danger); border-color: var(--pf-danger);">Remove</button></td>
+                  <td>MEM-1001</td>
+                </tr>
+                <tr>
+                  <td>Riley Chen</td>
+                  <td>
+                    <select name="role_m2" aria-label="Role for Riley Chen">
+                      <option value="pm">Project Lead</option>
+                      <option value="ba">Business Analyst</option>
+                      <option value="dev" selected>Technical Analyst</option>
+                    </select>
+                  </td>
+                  <td><button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.6rem; font-size:0.85rem;">Update</button></td>
+                  <td><button type="submit" class="btn btn-outline" style="padding:0.35rem 0.6rem; font-size:0.85rem; color: var(--pf-danger); border-color: var(--pf-danger);">Remove</button></td>
+                  <td>MEM-1002</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="btn-group">
+        <button type="submit" class="btn btn-primary">Save team</button>
+      </div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <a href="#">Contact Info</a>
+    <a href="#">Help</a>
+    <a href="homepage.html">Logout</a>
+  </footer>
+</body>
+</html>

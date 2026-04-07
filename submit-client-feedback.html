@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submit Client Feedback — Project Future</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="homepage.html">
+        <span class="logo-mark" aria-hidden="true">PF</span>
+        <span>Project Future</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-home" href="homepage.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="submit-client-application.html">Client App</a>
+        <a href="submit-student-application.html">Student App</a>
+        <a href="create-project.html">Create Project</a>
+        <a href="accept-reject-project.html">Projects</a>
+        <a href="accept-reject-student-applications.html">Students</a>
+        <a href="form-teams.html">Teams</a>
+        <a href="record-client-interview.html">Interview</a>
+        <a href="submit-authorization-document.html">Auth Doc</a>
+        <a href="send-team-formed-message.html">Team Msg</a>
+        <a href="submit-project-document-draft.html">Draft</a>
+        <a href="provide-document-feedback.html">TC Feedback</a>
+        <a href="submit-final-documents-request-eval.html">Finals</a>
+        <a href="submit-client-feedback.html">Client FB</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap">
+    <h1 class="page-title">Submit Client Feedback</h1>
+    <p class="page-subtitle">Rate the team’s work and share comments. Required fields are marked with an asterisk.</p>
+
+    <div class="notice notice-info" role="alert">
+      <strong>Validation:</strong> HTML5 form validation shows a message if required fields are missing when you submit. After successful submission, a confirmation message appears here in the live system.
+    </div>
+
+    <form class="card" action="#" method="post">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="feedback-project-id" class="required">Project ID</label>
+          <select id="feedback-project-id" name="project_id" required>
+            <option value="">— Select your project —</option>
+            <option value="prj-402">PRJ-402 — Acme Corp Data Migration</option>
+            <option value="prj-410">PRJ-410 — Bloom Retail Inventory</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend style="font-weight:600; padding:0 0 0.5rem;">Structured ratings (1 = low, 5 = high)</legend>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="rate-communication" class="required">Communication &amp; responsiveness</label>
+              <select id="rate-communication" name="rating_communication" required>
+                <option value="">— Select —</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="rate-quality" class="required">Quality of deliverables</label>
+              <select id="rate-quality" name="rating_quality" required>
+                <option value="">— Select —</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="rate-timeliness" class="required">Timeliness</label>
+              <select id="rate-timeliness" name="rating_timeliness" required>
+                <option value="">— Select —</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="rate-professionalism" class="required">Professionalism</label>
+              <select id="rate-professionalism" name="rating_professionalism" required>
+                <option value="">— Select —</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="rate-overall" class="required">Overall experience</label>
+              <select id="rate-overall" name="rating_overall" required>
+                <option value="">— Select —</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-row">
+          <label for="client-feedback" class="required">Client feedback</label>
+          <textarea id="client-feedback" name="client_feedback" required placeholder="Detailed feedback on the project and the team’s work."></textarea>
+        </div>
+        <div class="form-row">
+          <label for="other-comments">Other comments</label>
+          <textarea id="other-comments" name="other_comments" placeholder="Additional notes (optional)."></textarea>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="submit" class="btn btn-secondary" name="action" value="save" formnovalidate>Save</button>
+        <button type="submit" class="btn btn-primary" name="action" value="submit">Submit</button>
+      </div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <a href="#">Contact Info</a>
+    <a href="#">Help</a>
+    <a href="homepage.html">Logout</a>
+  </footer>
+</body>
+</html>

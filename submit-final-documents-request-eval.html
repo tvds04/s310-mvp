@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submit Final Documents &amp; Request Eval — Project Future</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="homepage.html">
+        <span class="logo-mark" aria-hidden="true">PF</span>
+        <span>Project Future</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-home" href="homepage.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="submit-client-application.html">Client App</a>
+        <a href="submit-student-application.html">Student App</a>
+        <a href="create-project.html">Create Project</a>
+        <a href="accept-reject-project.html">Projects</a>
+        <a href="accept-reject-student-applications.html">Students</a>
+        <a href="form-teams.html">Teams</a>
+        <a href="record-client-interview.html">Interview</a>
+        <a href="submit-authorization-document.html">Auth Doc</a>
+        <a href="send-team-formed-message.html">Team Msg</a>
+        <a href="submit-project-document-draft.html">Draft</a>
+        <a href="provide-document-feedback.html">TC Feedback</a>
+        <a href="submit-final-documents-request-eval.html">Finals</a>
+        <a href="submit-client-feedback.html">Client FB</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap">
+    <h1 class="page-title">Submit Final Documents &amp; Request Evaluation</h1>
+    <p class="page-subtitle">Upload the final project charter, final report, and final presentation. All three are required before you can request a client evaluation.</p>
+
+    <form class="card" action="#" method="post" enctype="multipart/form-data">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="project-ref" class="required">Project</label>
+          <select id="project-ref" name="project_id" required>
+            <option value="">— Select —</option>
+            <option value="prj-402">PRJ-402 — Acme Corp Data Migration</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="final-charter" class="required">Final project charter</label>
+          <input type="file" id="final-charter" name="final_charter" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        </div>
+        <div class="form-row">
+          <label for="final-report" class="required">Final report</label>
+          <input type="file" id="final-report" name="final_report" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        </div>
+        <div class="form-row">
+          <label for="final-presentation" class="required">Final presentation</label>
+          <input type="file" id="final-presentation" name="final_presentation" required accept=".pdf,.docx,.pptx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation">
+          <p class="hint">PDF or Word for documents; PowerPoint (.pptx) allowed for presentation slides.</p>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="confirm-all" name="confirm_all" value="1" required>
+          <label for="confirm-all" class="required" style="font-weight:500;">I confirm that TC feedback has been provided on each draft and these final files are complete.</label>
+        </div>
+      </div>
+      <p class="notice notice-info">In production, final submission is only possible after TC review of each draft. The client is notified to submit an evaluation; the TC receives a notification without attachment.</p>
+      <div class="btn-group">
+        <button type="submit" class="btn btn-primary">Request evaluation</button>
+      </div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <a href="#">Contact Info</a>
+    <a href="#">Help</a>
+    <a href="homepage.html">Logout</a>
+  </footer>
+</body>
+</html>

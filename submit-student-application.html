@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submit Student Application — Project Future</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="homepage.html">
+        <span class="logo-mark" aria-hidden="true">PF</span>
+        <span>Project Future</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-home" href="homepage.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="submit-client-application.html">Client App</a>
+        <a href="submit-student-application.html">Student App</a>
+        <a href="create-project.html">Create Project</a>
+        <a href="accept-reject-project.html">Projects</a>
+        <a href="accept-reject-student-applications.html">Students</a>
+        <a href="form-teams.html">Teams</a>
+        <a href="record-client-interview.html">Interview</a>
+        <a href="submit-authorization-document.html">Auth Doc</a>
+        <a href="send-team-formed-message.html">Team Msg</a>
+        <a href="submit-project-document-draft.html">Draft</a>
+        <a href="provide-document-feedback.html">TC Feedback</a>
+        <a href="submit-final-documents-request-eval.html">Finals</a>
+        <a href="submit-client-feedback.html">Client FB</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap">
+    <h1 class="page-title">Submit Student Application</h1>
+    <p class="page-subtitle">Apply to participate in Project Future. Fields marked with an asterisk are required.</p>
+
+    <form class="card" action="#" method="post" enctype="multipart/form-data">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="first-name" class="required">First Name</label>
+          <input type="text" id="first-name" name="first_name" required autocomplete="given-name">
+        </div>
+        <div class="form-row">
+          <label for="last-name" class="required">Last Name</label>
+          <input type="text" id="last-name" name="last_name" required autocomplete="family-name">
+        </div>
+        <div class="form-row">
+          <label for="student-email" class="required">Email</label>
+          <input type="email" id="student-email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <label for="class-standing" class="required">Class Standing</label>
+          <select id="class-standing" name="class_standing" required>
+            <option value="">— Select —</option>
+            <option value="freshman">Freshman</option>
+            <option value="sophomore">Sophomore</option>
+            <option value="junior">Junior</option>
+            <option value="senior">Senior</option>
+            <option value="grad">Grad</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="major" class="required">Major</label>
+          <select id="major" name="major" required>
+            <option value="">— Select —</option>
+            <option value="accounting">Accounting</option>
+            <option value="finance">Finance</option>
+            <option value="information-systems">Information Systems</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="resume" class="required">Upload resume</label>
+          <input type="file" id="resume" name="resume" required accept=".pdf,application/pdf">
+          <p class="hint">PDF only.</p>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <a href="#">Contact Info</a>
+    <a href="#">Help</a>
+    <a href="homepage.html">Logout</a>
+  </footer>
+</body>
+</html>

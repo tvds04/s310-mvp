@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Send Team Formed Message — Project Future</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="homepage.html">
+        <span class="logo-mark" aria-hidden="true">PF</span>
+        <span>Project Future</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-home" href="homepage.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="submit-client-application.html">Client App</a>
+        <a href="submit-student-application.html">Student App</a>
+        <a href="create-project.html">Create Project</a>
+        <a href="accept-reject-project.html">Projects</a>
+        <a href="accept-reject-student-applications.html">Students</a>
+        <a href="form-teams.html">Teams</a>
+        <a href="record-client-interview.html">Interview</a>
+        <a href="submit-authorization-document.html">Auth Doc</a>
+        <a href="send-team-formed-message.html">Team Msg</a>
+        <a href="submit-project-document-draft.html">Draft</a>
+        <a href="provide-document-feedback.html">TC Feedback</a>
+        <a href="submit-final-documents-request-eval.html">Finals</a>
+        <a href="submit-client-feedback.html">Client FB</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap">
+    <h1 class="page-title">Send “Team Formed and Next Steps” Message</h1>
+    <p class="page-subtitle">Review the auto-generated draft, edit as needed, then send to the client and all assigned participants.</p>
+
+    <section class="card">
+      <h2>Teams awaiting introductory email</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Client</th>
+              <th>Team formed</th>
+              <th>Message sent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PRJ-402</td>
+              <td>Acme Corp</td>
+              <td>Apr 6, 2026</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>PRJ-410</td>
+              <td>Bloom Retail</td>
+              <td>Apr 1, 2026</td>
+              <td>Yes — Apr 2, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <form class="card" action="#" method="post">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="queue-project" class="required">Project</label>
+          <select id="queue-project" name="project_id" required>
+            <option value="prj-402">PRJ-402 — Acme Corp</option>
+            <option value="prj-410">PRJ-410 — Bloom Retail</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="client-name">Client name (auto-filled)</label>
+          <input type="text" id="client-name" name="client_name" value="Acme Corp" readonly>
+        </div>
+        <div class="form-row">
+          <label for="client-email">Client email (auto-filled)</label>
+          <input type="email" id="client-email" name="client_email" value="jane.doe@acmecorp.example" readonly>
+        </div>
+        <div class="form-row">
+          <label for="participants">Participant names &amp; emails (auto-filled)</label>
+          <textarea id="participants" name="participants" readonly rows="4">Jordan Lee — jlee@university.example
+Riley Chen — rchen@university.example
+Alex Morgan — amorgan@university.example</textarea>
+        </div>
+        <div class="form-row feedback-area">
+          <label for="message-body" class="required">Message (editable)</label>
+          <textarea id="message-body" name="message_body" required>Subject: Project Future — Your team is formed (PRJ-402)
+
+Dear Acme Corp team and student participants,
+
+Your Project Future consulting team for PRJ-402 (Acme Corp Data Migration) is now officially formed.
+
+Next steps:
+1. Within one week, schedule a kickoff meeting with your client sponsor and Technology Consultant.
+2. Share agendas in advance and confirm roles (project lead, business analyst, technical analyst).
+3. Establish a recurring check-in cadence and document decisions in your shared workspace.
+
+We are excited to see your work begin. Reply to this thread if you need scheduling support.
+
+— Project Future Managing Committee</textarea>
+        </div>
+      </div>
+      <p class="hint">Sending logs a timestamp on the project, marks onboarding communications complete, and sets the project to active in the live system.</p>
+      <div class="btn-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <a href="#">Contact Info</a>
+    <a href="#">Help</a>
+    <a href="homepage.html">Logout</a>
+  </footer>
+</body>
+</html>

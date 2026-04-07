@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submit Authorization Document — Project Future</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="homepage.html">
+        <span class="logo-mark" aria-hidden="true">PF</span>
+        <span>Project Future</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-home" href="homepage.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="submit-client-application.html">Client App</a>
+        <a href="submit-student-application.html">Student App</a>
+        <a href="create-project.html">Create Project</a>
+        <a href="accept-reject-project.html">Projects</a>
+        <a href="accept-reject-student-applications.html">Students</a>
+        <a href="form-teams.html">Teams</a>
+        <a href="record-client-interview.html">Interview</a>
+        <a href="submit-authorization-document.html">Auth Doc</a>
+        <a href="send-team-formed-message.html">Team Msg</a>
+        <a href="submit-project-document-draft.html">Draft</a>
+        <a href="provide-document-feedback.html">TC Feedback</a>
+        <a href="submit-final-documents-request-eval.html">Finals</a>
+        <a href="submit-client-feedback.html">Client FB</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap">
+    <h1 class="page-title">Submit Authorization Document</h1>
+    <p class="page-subtitle">Upload your signed authorization PDF for the selected project. Only PDF files are accepted.</p>
+
+    <form class="card" action="#" method="post" enctype="multipart/form-data">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="project-select" class="required">Project</label>
+          <select id="project-select" name="project_id" required>
+            <option value="">— Select your project —</option>
+            <option value="prj-402">PRJ-402 — Acme Corp Data Migration</option>
+            <option value="prj-410">PRJ-410 — Bloom Retail Inventory</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="project-name" class="required">Project name</label>
+          <input type="text" id="project-name" name="project_name" required value="Acme Corp Data Migration" readonly>
+        </div>
+        <div class="form-row">
+          <label for="project-id-field" class="required">Project ID</label>
+          <input type="text" id="project-id-field" name="project_id_field" required value="PRJ-402" readonly>
+        </div>
+        <div class="form-row">
+          <label for="client-id" class="required">Client ID</label>
+          <input type="text" id="client-id" name="client_id" required value="CLI-001" readonly>
+        </div>
+        <div class="form-row">
+          <label for="client-name" class="required">Client name</label>
+          <input type="text" id="client-name" name="client_name" required value="Acme Corp" readonly>
+        </div>
+        <div class="form-row">
+          <label for="auth-pdf" class="required">Authorization document (PDF)</label>
+          <input type="file" id="auth-pdf" name="authorization_pdf" required accept=".pdf,application/pdf">
+        </div>
+      </div>
+
+      <section style="margin-top: 1.25rem;">
+        <h2 style="font-size:1rem; margin:0 0 0.5rem; color: var(--pf-blue);">Uploaded document (preview)</h2>
+        <p class="notice notice-info" style="margin:0;">
+          <strong>Sample state after upload:</strong>
+          <a href="#">Acme_Authorization_Signed_2026-04-01.pdf</a> — submitted Apr 1, 2026 · Linked to PRJ-402
+        </p>
+      </section>
+
+      <div class="btn-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <p class="notice notice-success" style="margin-top:1rem; margin-bottom:0;">
+        After successful submission, a confirmation message appears here in the live system, and the document is stored on the project record.
+      </p>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <a href="#">Contact Info</a>
+    <a href="#">Help</a>
+    <a href="homepage.html">Logout</a>
+  </footer>
+</body>
+</html>

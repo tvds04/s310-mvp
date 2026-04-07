@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accept / Reject Student Applications — Project Future</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="homepage.html">
+        <span class="logo-mark" aria-hidden="true">PF</span>
+        <span>Project Future</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-home" href="homepage.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="submit-client-application.html">Client App</a>
+        <a href="submit-student-application.html">Student App</a>
+        <a href="create-project.html">Create Project</a>
+        <a href="accept-reject-project.html">Projects</a>
+        <a href="accept-reject-student-applications.html">Students</a>
+        <a href="form-teams.html">Teams</a>
+        <a href="record-client-interview.html">Interview</a>
+        <a href="submit-authorization-document.html">Auth Doc</a>
+        <a href="send-team-formed-message.html">Team Msg</a>
+        <a href="submit-project-document-draft.html">Draft</a>
+        <a href="provide-document-feedback.html">TC Feedback</a>
+        <a href="submit-final-documents-request-eval.html">Finals</a>
+        <a href="submit-client-feedback.html">Client FB</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap">
+    <h1 class="page-title">Student Applications</h1>
+    <p class="page-subtitle">Managing Committee: review applicants, view materials, and record accept or reject decisions.</p>
+
+    <div class="stats-row" role="status">
+      <span class="stat-pill">Accepted applicants: 18</span>
+      <span class="stat-pill">Accepted projects: 6</span>
+      <span class="stat-pill">Pending: 4</span>
+    </div>
+
+    <section class="card">
+      <h2>Applicant list</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Class standing</th>
+              <th>Major</th>
+              <th>Status</th>
+              <th>Notes flag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alex Morgan</td>
+              <td>Junior</td>
+              <td>Information Systems</td>
+              <td>Pending</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Jordan Lee</td>
+              <td>Senior</td>
+              <td>Finance</td>
+              <td>Accepted</td>
+              <td>Interview notes on file</td>
+            </tr>
+            <tr>
+              <td>Riley Chen</td>
+              <td>Sophomore</td>
+              <td>Accounting</td>
+              <td>Accepted</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Sam Patel</td>
+              <td>Grad</td>
+              <td>Information Systems</td>
+              <td>Rejected</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="dashboard-layout">
+      <section class="card">
+        <h2>Selected applicant: Alex Morgan</h2>
+        <dl style="margin:0; display:grid; gap:0.5rem;">
+          <dt class="hint">Email</dt>
+          <dd style="margin:0;">amorgan@university.example</dd>
+          <dt class="hint">Application materials</dt>
+          <dd style="margin:0;">
+            <a href="#">View resume (PDF)</a> ·
+            <a href="#">Cover letter</a>
+          </dd>
+        </dl>
+      </section>
+
+      <section class="card">
+        <h2>Decision</h2>
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="mc-notes">Internal notes</label>
+              <textarea id="mc-notes" name="mc_notes" placeholder="Optional context for this applicant."></textarea>
+            </div>
+            <div class="form-row">
+              <label for="student-decision" class="required">Decision</label>
+              <select id="student-decision" name="decision" required>
+                <option value="">— Select —</option>
+                <option value="accept">Accept</option>
+                <option value="reject">Reject</option>
+              </select>
+            </div>
+          </div>
+          <p class="notice notice-info">Confirm before save in production. Accepted applicants receive confirmation; rejected applicants receive a respectful notice.</p>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-success" name="action" value="accept">Accept</button>
+            <button type="submit" class="btn btn-danger" name="action" value="reject">Reject</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <a href="#">Contact Info</a>
+    <a href="#">Help</a>
+    <a href="homepage.html">Logout</a>
+  </footer>
+</body>
+</html>
