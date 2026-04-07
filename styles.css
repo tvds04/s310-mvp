@@ -1,8 +1,8 @@
 /* Project Future — shared styles (HTML/CSS only) */
 
 :root {
-  --pf-blue: #1a4f7a;
-  --pf-blue-light: #2d6ba3;
+  --pf-blue: #002d4c;
+  --pf-blue-light: #1a4f6e;
   --pf-blue-bg: #e8f0f8;
   --pf-accent: #0d6efd;
   --pf-success: #198754;
@@ -90,22 +90,23 @@ a:hover {
   letter-spacing: -0.02em;
 }
 
-.brand:hover {
-  color: #e8f4ff;
+.site-header .brand {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
 }
 
-.logo-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+.site-header .brand:hover {
   background: #fff;
-  color: var(--pf-blue);
-  border-radius: 8px;
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: -0.05em;
+  opacity: 1;
+}
+
+.brand-logo {
+  display: block;
+  height: 3rem;
+  width: auto;
+  max-width: min(200px, 42vw);
+  object-fit: contain;
 }
 
 .main-nav {
