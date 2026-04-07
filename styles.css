@@ -90,14 +90,17 @@ a:hover {
   letter-spacing: -0.02em;
 }
 
+/* Solid white behind transparent PNG logo (GitHub Pages / all browsers) */
 .site-header .brand {
-  background: rgba(255, 255, 255, 0.98);
-  padding: 0.35rem 0.75rem;
+  background-color: #ffffff;
+  background-image: none;
+  padding: 0.45rem 0.85rem;
   border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
 .site-header .brand:hover {
-  background: #fff;
+  background-color: #ffffff;
   opacity: 1;
 }
 
@@ -107,6 +110,8 @@ a:hover {
   width: auto;
   max-width: min(200px, 42vw);
   object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 4px;
 }
 
 .main-nav {
