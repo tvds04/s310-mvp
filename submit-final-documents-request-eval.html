@@ -36,7 +36,7 @@
     <h1 class="page-title">Submit Final Documents &amp; Request Evaluation</h1>
     <p class="page-subtitle">Upload the final project charter, final report, and final presentation. All three are required before you can request a client evaluation.</p>
 
-    <form class="card" action="#" method="post" enctype="multipart/form-data">
+    <form class="card" action="#" method="post" enctype="multipart/form-data" data-confirm data-confirm-return="submit-final-documents-request-eval.html" data-confirm-title="Final documents submitted" data-confirm-message="Your final files and evaluation request were recorded.">
       <div class="form-grid">
         <div class="form-row">
           <label for="project-ref" class="required">Project</label>
@@ -63,7 +63,6 @@
           <label for="confirm-all" class="required" style="font-weight:500;">I confirm that TC feedback has been provided on each draft and these final files are complete.</label>
         </div>
       </div>
-      <p class="notice notice-info">In production, final submission is only possible after TC review of each draft. The client is notified to submit an evaluation; the TC receives a notification without attachment.</p>
       <div class="btn-group">
         <button type="submit" class="btn btn-primary">Request evaluation</button>
       </div>
@@ -74,5 +73,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

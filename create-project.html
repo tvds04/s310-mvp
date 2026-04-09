@@ -36,7 +36,7 @@
     <h1 class="page-title">Create Project</h1>
     <p class="page-subtitle">Technology Consultant: enter project information and associate the project with an existing client.</p>
 
-    <form class="card" action="#" method="post">
+    <form class="card" action="#" method="post" data-confirm data-confirm-return="create-project.html" data-confirm-title="Project saved" data-confirm-message="Project information was recorded for this prototype.">
       <div class="form-grid">
         <div class="form-row">
           <label for="project-id" class="required">Project ID</label>
@@ -82,5 +82,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

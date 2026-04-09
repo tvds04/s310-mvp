@@ -34,7 +34,7 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Projects Dashboard</h1>
-    <p class="page-subtitle">Managing Committee: review project applications. Interview notes must be recorded before a decision can be finalized in the live system.</p>
+    <p class="page-subtitle">Managing Committee: review project applications. Interview notes must be recorded before a decision can be finalized.</p>
 
     <div class="stats-row" role="status">
       <span class="stat-pill">6 total</span>
@@ -63,8 +63,7 @@
 
       <section class="card" id="detail-1">
         <h2>Project detail</h2>
-        <p class="hint" style="margin-top:0;">Sample record: Acme Corp · Organization: B2B · Project: Data migration readiness</p>
-        <form action="#" method="post">
+        <form action="#" method="post" data-confirm data-confirm-return="accept-reject-project.html">
           <div class="form-grid">
             <div class="form-row">
               <label for="org-type">Organization type</label>
@@ -91,10 +90,9 @@
               </select>
             </div>
           </div>
-          <p class="notice notice-info">In production, you would confirm your decision in a dialog before save. Rejection notifies the client; acceptance sends the authorization document.</p>
           <div class="btn-group">
-            <button type="submit" class="btn btn-success" formaction="#" name="action" value="accept">Accept</button>
-            <button type="submit" class="btn btn-danger" formaction="#" name="action" value="reject">Reject</button>
+            <button type="submit" class="btn btn-success" name="action" value="accept" data-confirm-title="Project accepted" data-confirm-message="The project decision was recorded.">Accept</button>
+            <button type="submit" class="btn btn-danger" name="action" value="reject" data-confirm-title="Project rejected" data-confirm-message="The project decision was recorded.">Reject</button>
           </div>
         </form>
       </section>
@@ -147,5 +145,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

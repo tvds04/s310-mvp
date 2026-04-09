@@ -34,9 +34,9 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Submit Project Document Draft</h1>
-    <p class="page-subtitle">Upload a draft for your Technology Consultant. Accepted formats: PDF or Word. Maximum size: 25 MB (enforced in production).</p>
+    <p class="page-subtitle">Upload a draft for your Technology Consultant. Accepted formats: PDF or Word. Maximum size: 25 MB.</p>
 
-    <form class="card" action="#" method="post" enctype="multipart/form-data">
+    <form class="card" action="#" method="post" enctype="multipart/form-data" data-confirm data-confirm-return="submit-project-document-draft.html" data-confirm-title="Draft submitted" data-confirm-message="Your document draft was recorded for TC review in this prototype.">
       <div class="form-grid" style="margin-bottom:1.25rem;">
         <div class="form-row">
           <label for="current-project">Current project</label>
@@ -65,7 +65,6 @@
         <input type="checkbox" id="confirm-draft" name="confirm_draft" value="1" required>
         <label for="confirm-draft" class="required" style="font-weight:500;">I confirm this is the correct draft for TC review.</label>
       </div>
-      <p class="notice notice-info">In the full system, a confirmation step prevents accidental submissions; the document is linked to your ProjectID with a new DocumentID and status “Pending TC Review.”</p>
       <div class="btn-group">
         <button type="submit" class="btn btn-primary">Submit draft</button>
       </div>
@@ -107,5 +106,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

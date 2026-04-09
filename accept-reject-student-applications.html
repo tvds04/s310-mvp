@@ -105,25 +105,16 @@
 
       <section class="card">
         <h2>Decision</h2>
-        <form action="#" method="post">
+        <form action="#" method="post" data-confirm data-confirm-return="accept-reject-student-applications.html">
           <div class="form-grid">
             <div class="form-row">
               <label for="mc-notes">Internal notes</label>
               <textarea id="mc-notes" name="mc_notes" placeholder="Optional context for this applicant."></textarea>
             </div>
-            <div class="form-row">
-              <label for="student-decision" class="required">Decision</label>
-              <select id="student-decision" name="decision" required>
-                <option value="">— Select —</option>
-                <option value="accept">Accept</option>
-                <option value="reject">Reject</option>
-              </select>
-            </div>
           </div>
-          <p class="notice notice-info">Confirm before save in production. Accepted applicants receive confirmation; rejected applicants receive a respectful notice.</p>
           <div class="btn-group">
-            <button type="submit" class="btn btn-success" name="action" value="accept">Accept</button>
-            <button type="submit" class="btn btn-danger" name="action" value="reject">Reject</button>
+            <button type="submit" class="btn btn-success" name="action" value="accept" data-confirm-title="Application accepted" data-confirm-message="The student decision was recorded.">Accept</button>
+            <button type="submit" class="btn btn-danger" name="action" value="reject" data-confirm-title="Application rejected" data-confirm-message="The student decision was recorded.">Reject</button>
           </div>
         </form>
       </section>
@@ -134,5 +125,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

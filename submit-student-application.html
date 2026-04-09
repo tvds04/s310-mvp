@@ -36,7 +36,7 @@
     <h1 class="page-title">Submit Student Application</h1>
     <p class="page-subtitle">Apply to participate in Project Future. Fields marked with an asterisk are required.</p>
 
-    <form class="card" action="#" method="post" enctype="multipart/form-data">
+    <form class="card" action="#" method="post" enctype="multipart/form-data" data-confirm data-confirm-return="submit-student-application.html" data-confirm-title="Student application saved" data-confirm-message="Your application and materials were recorded for this prototype.">
       <div class="form-grid">
         <div class="form-row">
           <label for="first-name" class="required">First Name</label>
@@ -86,5 +86,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

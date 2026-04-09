@@ -66,7 +66,7 @@
       </div>
     </section>
 
-    <form class="card" action="#" method="post">
+    <form class="card" action="#" method="post" data-confirm data-confirm-return="send-team-formed-message.html" data-confirm-title="Message sent" data-confirm-message="The team formed message was queued for delivery in this prototype.">
       <div class="form-grid">
         <div class="form-row">
           <label for="queue-project" class="required">Project</label>
@@ -107,7 +107,6 @@ We are excited to see your work begin. Reply to this thread if you need scheduli
 — Project Future Managing Committee</textarea>
         </div>
       </div>
-      <p class="hint">Sending logs a timestamp on the project, marks onboarding communications complete, and sets the project to active in the live system.</p>
       <div class="btn-group">
         <button type="submit" class="btn btn-primary">Send</button>
       </div>
@@ -118,5 +117,6 @@ We are excited to see your work begin. Reply to this thread if you need scheduli
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

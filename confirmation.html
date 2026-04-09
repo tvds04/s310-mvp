@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmation — Project Future</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Project Future">
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-home" href="index.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="submit-client-application.html">Client App</a>
+        <a href="submit-student-application.html">Student App</a>
+        <a href="create-project.html">Create Project</a>
+        <a href="accept-reject-project.html">Projects</a>
+        <a href="accept-reject-student-applications.html">Students</a>
+        <a href="form-teams.html">Teams</a>
+        <a href="record-client-interview.html">Interview</a>
+        <a href="submit-authorization-document.html">Auth Doc</a>
+        <a href="send-team-formed-message.html">Team Msg</a>
+        <a href="submit-project-document-draft.html">Draft</a>
+        <a href="provide-document-feedback.html">TC Feedback</a>
+        <a href="submit-final-documents-request-eval.html">Finals</a>
+        <a href="submit-client-feedback.html">Client FB</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap">
+    <div class="confirmation-panel card" role="status" aria-live="polite">
+      <div class="confirmation-icon" aria-hidden="true">✓</div>
+      <h1 class="page-title confirmation-title" id="confirm-title">Saved</h1>
+      <p class="page-subtitle confirmation-message" id="confirm-message" hidden></p>
+      <p class="confirmation-hint hint" id="confirm-prototype-note">This is a prototype: no data was sent to a server.</p>
+      <div class="btn-group confirmation-actions">
+        <a class="btn btn-primary" id="confirm-return" href="index.html">Continue</a>
+        <a class="btn btn-outline" href="index.html">Home</a>
+      </div>
+    </div>
+    <noscript>
+      <p class="card" style="margin-top:1rem;">Enable JavaScript to see your confirmation details, or use the navigation above.</p>
+    </noscript>
+  </main>
+  <footer class="site-footer">
+    <a href="#">Contact Info</a>
+    <a href="#">Help</a>
+    <a href="index.html">Logout</a>
+  </footer>
+  <script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var title = params.get("title") || "Saved";
+  var message = params.get("message") || params.get("msg") || "";
+  var returnUrl = params.get("return") || "index.html";
+
+  var titleEl = document.getElementById("confirm-title");
+  var messageEl = document.getElementById("confirm-message");
+  var linkEl = document.getElementById("confirm-return");
+
+  titleEl.textContent = title;
+  document.title = title + " — Project Future";
+
+  if (message) {
+    messageEl.textContent = message;
+    messageEl.hidden = false;
+  }
+
+  linkEl.setAttribute("href", returnUrl);
+  linkEl.textContent = returnUrl === "index.html" ? "Back to home" : "Continue";
+})();
+  </script>
+</body>
+</html>

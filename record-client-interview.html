@@ -36,7 +36,7 @@
     <h1 class="page-title">Record Client Interview Details</h1>
     <p class="page-subtitle">Select a client project application, review project and client information, and save interview notes.</p>
 
-    <form class="card" action="#" method="post">
+    <form class="card" action="#" method="post" data-confirm data-confirm-return="record-client-interview.html" data-confirm-title="Interview details saved" data-confirm-message="Interview notes and status were recorded.">
       <div class="form-grid">
         <div class="form-row">
           <label for="project-application" class="required">Project application</label>
@@ -72,7 +72,6 @@
           </select>
         </div>
       </div>
-      <p class="hint">Previously saved notes can be reviewed and updated from this form in the live system.</p>
       <div class="btn-group">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
@@ -83,5 +82,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

@@ -37,7 +37,7 @@
     <p class="page-subtitle">Technology Consultant: review pending drafts, add feedback, save a draft, or submit final feedback to the team.</p>
 
     <section class="card">
-      <h2>Pending project drafts (sortable in production)</h2>
+      <h2>Pending project drafts</h2>
       <div class="table-wrap">
         <table class="data-table">
           <thead>
@@ -69,7 +69,7 @@
       </div>
     </section>
 
-    <form class="card" action="#" method="post">
+    <form class="card" action="#" method="post" data-confirm data-confirm-return="provide-document-feedback.html">
       <div class="form-grid">
         <div class="form-row">
           <label for="review-doc" class="required">Select draft to review</label>
@@ -82,13 +82,11 @@
         <div class="form-row">
           <label for="tc-feedback" class="required">TC feedback</label>
           <textarea id="tc-feedback" class="feedback-area" name="tc_feedback" required placeholder="Specific, actionable feedback for the participant team."></textarea>
-          <p class="hint">Rich text in production; this prototype uses a plain text area.</p>
         </div>
       </div>
-      <p class="notice notice-info">Saving stores an unpublished draft. Final submission locks the feedback and notifies the team.</p>
       <div class="btn-group">
-        <button type="submit" class="btn btn-secondary" name="action" value="draft" formnovalidate>Save draft</button>
-        <button type="submit" class="btn btn-primary" name="action" value="submit">Submit feedback</button>
+        <button type="submit" class="btn btn-secondary" name="action" value="draft" formnovalidate data-confirm-title="Draft saved" data-confirm-message="Your TC feedback draft was saved.">Save draft</button>
+        <button type="submit" class="btn btn-primary" name="action" value="submit" data-confirm-title="Feedback submitted" data-confirm-message="Your feedback was sent to the team in this prototype.">Submit feedback</button>
       </div>
     </form>
   </main>
@@ -97,5 +95,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

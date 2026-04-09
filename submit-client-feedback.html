@@ -36,11 +36,7 @@
     <h1 class="page-title">Submit Client Feedback</h1>
     <p class="page-subtitle">Rate the team’s work and share comments. Required fields are marked with an asterisk.</p>
 
-    <div class="notice notice-info" role="alert">
-      <strong>Validation:</strong> HTML5 form validation shows a message if required fields are missing when you submit. After successful submission, a confirmation message appears here in the live system.
-    </div>
-
-    <form class="card" action="#" method="post">
+    <form class="card" action="#" method="post" data-confirm data-confirm-return="submit-client-feedback.html">
       <div class="form-grid">
         <div class="form-row">
           <label for="feedback-project-id" class="required">Project ID</label>
@@ -122,8 +118,8 @@
         </div>
       </div>
       <div class="btn-group">
-        <button type="submit" class="btn btn-secondary" name="action" value="save" formnovalidate>Save</button>
-        <button type="submit" class="btn btn-primary" name="action" value="submit">Submit</button>
+        <button type="submit" class="btn btn-secondary" name="action" value="save" formnovalidate data-confirm-title="Feedback saved" data-confirm-message="Your client feedback was saved as a draft.">Save</button>
+        <button type="submit" class="btn btn-primary" name="action" value="submit" data-confirm-title="Feedback submitted" data-confirm-message="Thank you for your feedback.">Submit</button>
       </div>
     </form>
   </main>
@@ -132,5 +128,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

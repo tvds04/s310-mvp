@@ -36,7 +36,7 @@
     <h1 class="page-title">Form Teams</h1>
     <p class="page-subtitle">Assign accepted students to approved projects, update roles, and save team composition.</p>
 
-    <form action="#" method="post">
+    <form action="#" method="post" data-confirm data-confirm-return="form-teams.html">
       <section class="card">
         <h2>Project details</h2>
         <div class="form-grid">
@@ -98,7 +98,7 @@
               </tbody>
             </table>
           </div>
-          <p class="hint">Use ✓ to add to the selected project’s roster (prototype). Rejected applicants are hidden from this list in production.</p>
+          <p class="hint">Use ✓ to add an applicant to the selected project’s roster.</p>
         </section>
 
         <section class="card">
@@ -124,8 +124,8 @@
                       <option value="dev">Technical Analyst</option>
                     </select>
                   </td>
-                  <td><button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.6rem; font-size:0.85rem;">Update</button></td>
-                  <td><button type="submit" class="btn btn-outline" style="padding:0.35rem 0.6rem; font-size:0.85rem; color: var(--pf-danger); border-color: var(--pf-danger);">Remove</button></td>
+                  <td><button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.6rem; font-size:0.85rem;" data-confirm-title="Role updated" data-confirm-message="The team member role was updated.">Update</button></td>
+                  <td><button type="submit" class="btn btn-outline" style="padding:0.35rem 0.6rem; font-size:0.85rem; color: var(--pf-danger); border-color: var(--pf-danger);" data-confirm-title="Member removed" data-confirm-message="The team member was removed from the roster.">Remove</button></td>
                   <td>MEM-1001</td>
                 </tr>
                 <tr>
@@ -137,8 +137,8 @@
                       <option value="dev" selected>Technical Analyst</option>
                     </select>
                   </td>
-                  <td><button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.6rem; font-size:0.85rem;">Update</button></td>
-                  <td><button type="submit" class="btn btn-outline" style="padding:0.35rem 0.6rem; font-size:0.85rem; color: var(--pf-danger); border-color: var(--pf-danger);">Remove</button></td>
+                  <td><button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.6rem; font-size:0.85rem;" data-confirm-title="Role updated" data-confirm-message="The team member role was updated.">Update</button></td>
+                  <td><button type="submit" class="btn btn-outline" style="padding:0.35rem 0.6rem; font-size:0.85rem; color: var(--pf-danger); border-color: var(--pf-danger);" data-confirm-title="Member removed" data-confirm-message="The team member was removed from the roster.">Remove</button></td>
                   <td>MEM-1002</td>
                 </tr>
               </tbody>
@@ -148,7 +148,7 @@
       </div>
 
       <div class="btn-group">
-        <button type="submit" class="btn btn-primary">Save team</button>
+        <button type="submit" class="btn btn-primary" data-confirm-title="Team saved" data-confirm-message="Team composition was saved.">Save team</button>
       </div>
     </form>
   </main>
@@ -157,5 +157,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>
