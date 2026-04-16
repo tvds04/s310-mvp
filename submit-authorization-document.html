@@ -93,57 +93,87 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Submit Authorization Document</h1>
-    <p class="page-subtitle">Upload your signed authorization PDF for the selected project. Only PDF files are accepted.</p>
+    <p class="page-subtitle">Upload your signed authorization PDF for each project that requires it. After you submit, that project leaves this queue (stored in your browser for this prototype).</p>
 
-    <form class="card" action="#" method="post" enctype="multipart/form-data" data-confirm data-confirm-return="submit-authorization-document.html" data-confirm-title="Authorization document submitted" data-confirm-message="Your signed PDF was recorded for this prototype.">
-      <div class="form-grid">
-        <div class="form-row">
-          <label for="project-select" class="required">Project</label>
-          <select id="project-select" name="project_id" required>
-            <option value="">— Select your project —</option>
-            <option value="prj-402">PRJ-402 — Acme Corp Data Migration</option>
-            <option value="prj-410">PRJ-410 — Bloom Retail Inventory</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="project-name" class="required">Project name</label>
-          <input type="text" id="project-name" name="project_name" required value="Acme Corp Data Migration" readonly>
-        </div>
-        <div class="form-row">
-          <label for="project-id-field" class="required">Project ID</label>
-          <input type="text" id="project-id-field" name="project_id_field" required value="PRJ-402" readonly>
-        </div>
-        <div class="form-row">
-          <label for="client-id" class="required">Client ID</label>
-          <input type="text" id="client-id" name="client_id" required value="CLI-001" readonly>
-        </div>
-        <div class="form-row">
-          <label for="client-name" class="required">Client name</label>
-          <input type="text" id="client-name" name="client_name" required value="Acme Corp" readonly>
-        </div>
-        <div class="form-row">
-          <label for="auth-pdf" class="required">Authorization document (PDF)</label>
-          <input type="file" id="auth-pdf" name="authorization_pdf" required accept=".pdf,application/pdf">
+    <div class="stats-row" role="status">
+      <span class="stat-pill">Awaiting upload: <span id="sad-stat-pending">0</span></span>
+      <span class="stat-pill">Submitted: <span id="sad-stat-done">0</span></span>
+    </div>
+
+    <section class="card">
+      <h2>Projects pending authorization</h2>
+      <p id="sad-empty" class="hint" hidden>All projects have an authorization on file.</p>
+      <div id="sad-table-wrap" class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Client</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="sad-tbody"></tbody>
+        </table>
+      </div>
+      <p class="hint">Select a project, attach a PDF, then submit.</p>
+    </section>
+
+    <form id="sad-form" class="card" action="#" method="post" enctype="multipart/form-data" data-confirm-return="submit-authorization-document.html">
+      <h2>Upload</h2>
+      <div id="sad-dashboard" class="dashboard-layout">
+        <section class="df-detail-panel">
+          <h3 class="df-detail-heading">Selected project</h3>
+          <dl id="sad-detail-meta" class="df-detail-dl"></dl>
+        </section>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="project-name" class="required">Project name</label>
+            <input type="text" id="project-name" name="project_name" required value="" readonly>
+          </div>
+          <div class="form-row">
+            <label for="project-id-field" class="required">Project ID</label>
+            <input type="text" id="project-id-field" name="project_id_field" required value="" readonly>
+          </div>
+          <div class="form-row">
+            <label for="client-id" class="required">Client ID</label>
+            <input type="text" id="client-id" name="client_id" required value="" readonly>
+          </div>
+          <div class="form-row">
+            <label for="client-name" class="required">Client name</label>
+            <input type="text" id="client-name" name="client_name" required value="" readonly>
+          </div>
+          <div class="form-row">
+            <label for="auth-pdf" class="required">Authorization document (PDF)</label>
+            <input type="file" id="auth-pdf" name="authorization_pdf" required accept=".pdf,application/pdf">
+          </div>
         </div>
       </div>
-
-      <section style="margin-top: 1.25rem;">
-        <h2 style="font-size:1rem; margin:0 0 0.5rem; color: var(--pf-blue);">Uploaded document</h2>
-        <p style="margin:0;">
-          <a href="#">Acme_Authorization_Signed_2026-04-01.pdf</a> — submitted Apr 1, 2026 · Linked to PRJ-402
-        </p>
-      </section>
-
       <div class="btn-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" data-confirm-title="Authorization document submitted" data-confirm-message="Your signed PDF was recorded for this prototype.">Submit</button>
       </div>
     </form>
+
+    <section class="card">
+      <h2>All projects (summary)</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Client</th>
+              <th>Authorization</th>
+            </tr>
+          </thead>
+          <tbody id="sad-all-tbody"></tbody>
+        </table>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <a href="#">Contact Info</a>
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
-  <script src="confirmation-redirect.js" defer></script>
+  <script src="submit-authorization-document.js" defer></script>
 </body>
 </html>

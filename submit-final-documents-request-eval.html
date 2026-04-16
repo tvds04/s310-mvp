@@ -93,45 +93,84 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Submit Final Documents &amp; Request Evaluation</h1>
-    <p class="page-subtitle">Upload the final project charter, final report, and final presentation. All three are required before you can request a client evaluation.</p>
+    <p class="page-subtitle">Upload the final project charter, final report, and final presentation. After you request evaluation for a project, it leaves this queue (stored in your browser for this prototype).</p>
 
-    <form class="card" action="#" method="post" enctype="multipart/form-data" data-confirm data-confirm-return="submit-final-documents-request-eval.html" data-confirm-title="Final documents submitted" data-confirm-message="Your final files and evaluation request were recorded.">
-      <div class="form-grid">
-        <div class="form-row">
-          <label for="project-ref" class="required">Project</label>
-          <select id="project-ref" name="project_id" required>
-            <option value="">— Select —</option>
-            <option value="prj-402">PRJ-402 — Acme Corp Data Migration</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="final-charter" class="required">Final project charter</label>
-          <input type="file" id="final-charter" name="final_charter" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-        </div>
-        <div class="form-row">
-          <label for="final-report" class="required">Final report</label>
-          <input type="file" id="final-report" name="final_report" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-        </div>
-        <div class="form-row">
-          <label for="final-presentation" class="required">Final presentation</label>
-          <input type="file" id="final-presentation" name="final_presentation" required accept=".pdf,.docx,.pptx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation">
-          <p class="hint">PDF or Word for documents; PowerPoint (.pptx) allowed for presentation slides.</p>
-        </div>
-        <div class="checkbox-row">
-          <input type="checkbox" id="confirm-all" name="confirm_all" value="1" required>
-          <label for="confirm-all" class="required" style="font-weight:500;">I confirm that TC feedback has been provided on each draft and these final files are complete.</label>
+    <div class="stats-row" role="status">
+      <span class="stat-pill">Pending: <span id="fde-stat-pending">0</span></span>
+      <span class="stat-pill">Evaluation requested: <span id="fde-stat-done">0</span></span>
+    </div>
+
+    <section class="card">
+      <h2>Projects ready for final submission</h2>
+      <p id="fde-empty" class="hint" hidden>There are no projects pending final documents here.</p>
+      <div id="fde-table-wrap" class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Project</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="fde-tbody"></tbody>
+        </table>
+      </div>
+      <p class="hint">Click a row to select a project, attach all three files, then request evaluation.</p>
+    </section>
+
+    <form id="fde-form" class="card" action="#" method="post" enctype="multipart/form-data" data-confirm-return="submit-final-documents-request-eval.html">
+      <h2>Final files</h2>
+      <div id="fde-dashboard" class="dashboard-layout">
+        <section class="df-detail-panel">
+          <h3 class="df-detail-heading">Selected project</h3>
+          <dl id="fde-detail-meta" class="df-detail-dl"></dl>
+        </section>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="final-charter" class="required">Final project charter</label>
+            <input type="file" id="final-charter" name="final_charter" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+          </div>
+          <div class="form-row">
+            <label for="final-report" class="required">Final report</label>
+            <input type="file" id="final-report" name="final_report" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+          </div>
+          <div class="form-row">
+            <label for="final-presentation" class="required">Final presentation</label>
+            <input type="file" id="final-presentation" name="final_presentation" required accept=".pdf,.docx,.pptx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation">
+            <p class="hint">PDF or Word for documents; PowerPoint (.pptx) allowed for presentation slides.</p>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="confirm-all" name="confirm_all" value="1" required>
+            <label for="confirm-all" class="required" style="font-weight:500;">I confirm that TC feedback has been provided on each draft and these final files are complete.</label>
+          </div>
         </div>
       </div>
       <div class="btn-group">
-        <button type="submit" class="btn btn-primary">Request evaluation</button>
+        <button type="submit" class="btn btn-primary" data-confirm-title="Final documents submitted" data-confirm-message="Your final files and evaluation request were recorded.">Request evaluation</button>
       </div>
     </form>
+
+    <section class="card">
+      <h2>All projects (summary)</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Project</th>
+              <th>Final submission</th>
+            </tr>
+          </thead>
+          <tbody id="fde-all-tbody"></tbody>
+        </table>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <a href="#">Contact Info</a>
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
-  <script src="confirmation-redirect.js" defer></script>
+  <script src="submit-final-documents-request-eval.js" defer></script>
 </body>
 </html>

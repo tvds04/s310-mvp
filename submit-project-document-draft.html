@@ -93,69 +93,88 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Submit Project Document Draft</h1>
-    <p class="page-subtitle">Upload a draft for your Technology Consultant. Accepted formats: PDF or Word. Maximum size: 25 MB.</p>
+    <p class="page-subtitle">Upload a draft for your Technology Consultant. After you submit a milestone, it leaves this queue (stored in your browser for this prototype).</p>
 
-    <form class="card" action="#" method="post" enctype="multipart/form-data" data-confirm data-confirm-return="submit-project-document-draft.html" data-confirm-title="Draft submitted" data-confirm-message="Your document draft was recorded for TC review in this prototype.">
-      <div class="form-grid" style="margin-bottom:1.25rem;">
-        <div class="form-row">
-          <label for="current-project">Current project</label>
-          <input type="text" id="current-project" name="current_project" value="PRJ-402 (Acme Corp Data Migration)" readonly>
-        </div>
-        <div class="form-row">
-          <label for="team-role" class="required">Team role</label>
-          <select id="team-role" name="team_role" required>
-            <option value="">— Select —</option>
-            <option value="lead">Project Lead</option>
-            <option value="ba" selected>Business Analyst</option>
-            <option value="ta">Technical Analyst</option>
-          </select>
-        </div>
+    <div class="stats-row" role="status">
+      <span class="stat-pill">Pending milestones: <span id="pdd-stat-pending">0</span></span>
+      <span class="stat-pill">Submitted: <span id="pdd-stat-done">0</span></span>
+    </div>
+
+    <section class="card">
+      <h2>Drafts pending submission</h2>
+      <p id="pdd-empty" class="hint" hidden>There are no pending draft milestones.</p>
+      <div id="pdd-table-wrap" class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Milestone</th>
+              <th>Project</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="pdd-tbody"></tbody>
+        </table>
       </div>
-      <div class="upload-zone" aria-label="File upload">
-        <p><strong>Drag &amp; drop</strong> your file into the browser’s file picker (visual area), or choose a file below.</p>
-        <p class="hint">.PDF or .DOCX · Max 25 MB</p>
-        <div class="form-row" style="max-width:28rem; margin:0 auto; text-align:left;">
-          <label for="draft-file" class="required">Draft file</label>
-          <input type="file" id="draft-file" name="draft_file" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+      <p class="hint">Click a row to select a milestone, upload your file, and submit.</p>
+    </section>
+
+    <form id="pdd-form" class="card" action="#" method="post" enctype="multipart/form-data" data-confirm-return="submit-project-document-draft.html">
+      <h2>Upload</h2>
+      <div id="pdd-dashboard" class="dashboard-layout">
+        <section class="df-detail-panel">
+          <h3 class="df-detail-heading">Selected milestone</h3>
+          <dl id="pdd-detail-meta" class="df-detail-dl"></dl>
+        </section>
+        <div>
+          <div class="form-grid" style="margin-bottom:1.25rem;">
+            <div class="form-row">
+              <label for="current-project">Current project</label>
+              <input type="text" id="current-project" name="current_project" value="" readonly>
+            </div>
+            <div class="form-row">
+              <label for="team-role" class="required">Team role</label>
+              <select id="team-role" name="team_role" required>
+                <option value="">— Select —</option>
+                <option value="lead">Project Lead</option>
+                <option value="ba">Business Analyst</option>
+                <option value="ta">Technical Analyst</option>
+              </select>
+            </div>
+          </div>
+          <div class="upload-zone" aria-label="File upload">
+            <p><strong>Drag &amp; drop</strong> your file into the browser’s file picker (visual area), or choose a file below.</p>
+            <p class="hint">.PDF or .DOCX · Max 25 MB</p>
+            <div class="form-row" style="max-width:28rem; margin:0 auto; text-align:left;">
+              <label for="draft-file" class="required">Draft file</label>
+              <input type="file" id="draft-file" name="draft_file" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            </div>
+            <p class="hint" style="margin-top:0.75rem;">Use the <strong>Browse files</strong> control in your browser to select .PDF or .DOCX.</p>
+          </div>
+          <div class="checkbox-row" style="margin-top:1rem;">
+            <input type="checkbox" id="confirm-draft" name="confirm_draft" value="1" required>
+            <label for="confirm-draft" class="required" style="font-weight:500;">I confirm this is the correct draft for TC review.</label>
+          </div>
         </div>
-        <p class="hint" style="margin-top:0.75rem;">Use the <strong>Browse files</strong> control in your browser to select .PDF or .DOCX.</p>
-      </div>
-      <div class="checkbox-row" style="margin-top:1rem;">
-        <input type="checkbox" id="confirm-draft" name="confirm_draft" value="1" required>
-        <label for="confirm-draft" class="required" style="font-weight:500;">I confirm this is the correct draft for TC review.</label>
       </div>
       <div class="btn-group">
-        <button type="submit" class="btn btn-primary">Submit draft</button>
+        <button type="submit" class="btn btn-primary" data-confirm-title="Draft submitted" data-confirm-message="Your document draft was recorded for TC review in this prototype.">Submit draft</button>
       </div>
     </form>
 
     <section class="card">
-      <h2>Previously submitted drafts</h2>
-      <p class="hint">Submitted drafts cannot be deleted or overwritten by participants once filed (per policy).</p>
+      <h2>All milestones (summary)</h2>
+      <p class="hint">Submitted status reflects this prototype session.</p>
       <div class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Document ID</th>
-              <th>File name</th>
-              <th>Submitted</th>
+              <th>Queue ID</th>
+              <th>Milestone</th>
+              <th>Project</th>
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>DOC-7781</td>
-              <td>Charter_Draft_v2.docx</td>
-              <td>Mar 28, 2026</td>
-              <td>Pending TC Review</td>
-            </tr>
-            <tr>
-              <td>DOC-7702</td>
-              <td>Charter_Draft_v1.pdf</td>
-              <td>Mar 20, 2026</td>
-              <td>Feedback posted</td>
-            </tr>
-          </tbody>
+          <tbody id="pdd-all-tbody"></tbody>
         </table>
       </div>
     </section>
@@ -165,6 +184,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
-  <script src="confirmation-redirect.js" defer></script>
+  <script src="submit-project-document-draft.js" defer></script>
 </body>
 </html>

@@ -93,54 +93,95 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Record Client Interview Details</h1>
-    <p class="page-subtitle">Select a client project application, review project and client information, and save interview notes.</p>
+    <p class="page-subtitle">Select a client project application, review project and client information, and save interview notes. Once submitted, that project leaves the pending list (stored in your browser for this prototype).</p>
 
-    <form class="card" action="#" method="post" data-confirm data-confirm-return="record-client-interview.html" data-confirm-title="Interview details saved" data-confirm-message="Interview notes and status were recorded.">
-      <div class="form-grid">
-        <div class="form-row">
-          <label for="project-application" class="required">Project application</label>
-          <select id="project-application" name="project_application" required>
-            <option value="">— Select client project —</option>
-            <option value="prj-402">PRJ-402 — Acme Corp — Data migration readiness</option>
-            <option value="prj-405">PRJ-405 — Riverdale Logistics — Route review</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="project-id" class="required">Project ID</label>
-          <input type="text" id="project-id" name="project_id" required value="PRJ-402" readonly>
-        </div>
-        <div class="form-row">
-          <label for="client-id" class="required">Client ID</label>
-          <input type="text" id="client-id" name="client_id" required value="CLI-001" readonly>
-        </div>
-        <div class="form-row">
-          <label for="project-details" class="required">Project details</label>
-          <textarea id="project-details" name="project_details" required>Phased migration assessment; client has IT liaison; 10-week window.</textarea>
-        </div>
-        <div class="form-row">
-          <label for="interview-notes" class="required">Interview notes</label>
-          <textarea id="interview-notes" name="interview_notes" required placeholder="Detailed notes from the client interview."></textarea>
-        </div>
-        <div class="form-row">
-          <label for="status" class="required">Accept / reject status</label>
-          <select id="status" name="status" required>
-            <option value="">— Select —</option>
-            <option value="pending">Pending</option>
-            <option value="accept">Accept</option>
-            <option value="reject">Reject</option>
-          </select>
+    <div class="stats-row" role="status">
+      <span class="stat-pill">Pending interviews: <span id="rci-stat-pending">0</span></span>
+      <span class="stat-pill">Recorded: <span id="rci-stat-done">0</span></span>
+    </div>
+
+    <section class="card">
+      <h2>Projects awaiting interview</h2>
+      <p id="rci-empty" class="hint" hidden>There are no projects pending interview.</p>
+      <div id="rci-table-wrap" class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Client</th>
+              <th>Project</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="rci-tbody"></tbody>
+        </table>
+      </div>
+      <p class="hint">Click a row to load that project, then complete notes and submit.</p>
+    </section>
+
+    <form id="rci-form" class="card" action="#" method="post" data-confirm-return="record-client-interview.html">
+      <h2>Interview record</h2>
+      <div id="rci-dashboard" class="dashboard-layout">
+        <section class="df-detail-panel">
+          <h3 class="df-detail-heading">Selected application</h3>
+          <dl id="rci-detail-meta" class="df-detail-dl"></dl>
+        </section>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="project-id" class="required">Project ID</label>
+            <input type="text" id="project-id" name="project_id" required value="" readonly>
+          </div>
+          <div class="form-row">
+            <label for="client-id" class="required">Client ID</label>
+            <input type="text" id="client-id" name="client_id" required value="" readonly>
+          </div>
+          <div class="form-row">
+            <label for="project-details" class="required">Project details</label>
+            <textarea id="project-details" name="project_details" required></textarea>
+          </div>
+          <div class="form-row">
+            <label for="interview-notes" class="required">Interview notes</label>
+            <textarea id="interview-notes" name="interview_notes" required placeholder="Detailed notes from the client interview."></textarea>
+          </div>
+          <div class="form-row">
+            <label for="status" class="required">Accept / reject status</label>
+            <select id="status" name="status" required>
+              <option value="">— Select —</option>
+              <option value="pending">Pending</option>
+              <option value="accept">Accept</option>
+              <option value="reject">Reject</option>
+            </select>
+          </div>
         </div>
       </div>
       <div class="btn-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" data-confirm-title="Interview details saved" data-confirm-message="Interview notes and status were recorded.">Submit</button>
       </div>
     </form>
+
+    <section class="card">
+      <h2>All projects (summary)</h2>
+      <p class="hint">Interview recorded status reflects submissions in this prototype session.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Client</th>
+              <th>Project</th>
+              <th>Interview</th>
+            </tr>
+          </thead>
+          <tbody id="rci-all-tbody"></tbody>
+        </table>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <a href="#">Contact Info</a>
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
-  <script src="confirmation-redirect.js" defer></script>
+  <script src="record-client-interview.js" defer></script>
 </body>
 </html>

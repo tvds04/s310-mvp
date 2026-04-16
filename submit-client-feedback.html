@@ -93,18 +93,39 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Submit Client Feedback</h1>
-    <p class="page-subtitle">Rate the team’s work and share comments. Required fields are marked with an asterisk.</p>
+    <p class="page-subtitle">Rate the team’s work and share comments. Submitting final feedback removes that project from this list. Save stores a draft without removing it (stored in your browser for this prototype).</p>
 
-    <form class="card" action="#" method="post" data-confirm data-confirm-return="submit-client-feedback.html">
-      <div class="form-grid">
-        <div class="form-row">
-          <label for="feedback-project-id" class="required">Project ID</label>
-          <select id="feedback-project-id" name="project_id" required>
-            <option value="">— Select your project —</option>
-            <option value="prj-402">PRJ-402 — Acme Corp Data Migration</option>
-            <option value="prj-410">PRJ-410 — Bloom Retail Inventory</option>
-          </select>
-        </div>
+    <div class="stats-row" role="status">
+      <span class="stat-pill">Pending feedback: <span id="scf-stat-pending">0</span></span>
+      <span class="stat-pill">Submitted: <span id="scf-stat-done">0</span></span>
+    </div>
+
+    <section class="card">
+      <h2>Projects awaiting your feedback</h2>
+      <p id="scf-empty" class="hint" hidden>There are no projects pending client feedback.</p>
+      <div id="scf-table-wrap" class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Project</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="scf-tbody"></tbody>
+        </table>
+      </div>
+      <p class="hint">Click a row to select a project, complete the form, then Save or Submit.</p>
+    </section>
+
+    <form id="scf-form" class="card" action="#" method="post" data-confirm-return="submit-client-feedback.html">
+      <input type="hidden" id="feedback-project-id-hidden" name="project_id" value="">
+      <div id="scf-dashboard" class="dashboard-layout">
+        <section class="df-detail-panel">
+          <h3 class="df-detail-heading">Selected project</h3>
+          <dl id="scf-detail-meta" class="df-detail-dl"></dl>
+        </section>
+        <div class="form-grid">
 
         <fieldset>
           <legend style="font-weight:600; padding:0 0 0.5rem;">Structured ratings (1 = low, 5 = high)</legend>
@@ -175,18 +196,35 @@
           <label for="other-comments">Other comments</label>
           <textarea id="other-comments" name="other_comments" placeholder="Additional notes (optional)."></textarea>
         </div>
+        </div>
       </div>
       <div class="btn-group">
         <button type="submit" class="btn btn-secondary" name="action" value="save" formnovalidate data-confirm-title="Feedback saved" data-confirm-message="Your client feedback was saved as a draft.">Save</button>
         <button type="submit" class="btn btn-primary" name="action" value="submit" data-confirm-title="Feedback submitted" data-confirm-message="Thank you for your feedback.">Submit</button>
       </div>
     </form>
+
+    <section class="card">
+      <h2>All projects (summary)</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Project</th>
+              <th>Feedback</th>
+            </tr>
+          </thead>
+          <tbody id="scf-all-tbody"></tbody>
+        </table>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <a href="#">Contact Info</a>
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
-  <script src="confirmation-redirect.js" defer></script>
+  <script src="submit-client-feedback.js" defer></script>
 </body>
 </html>
