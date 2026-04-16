@@ -93,57 +93,70 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Projects Dashboard</h1>
-    <p class="page-subtitle">Managing Committee: review project applications. Interview notes must be recorded before a decision can be finalized.</p>
+    <p class="page-subtitle">Managing Committee: review project applications and record interview notes before a decision. Once saved, a project leaves the pending list (stored in your browser for this prototype).</p>
 
     <div class="stats-row" role="status">
-      <span class="stat-pill">6 total</span>
-      <span class="stat-pill">4 accepted</span>
-      <span class="stat-pill">1 rejected</span>
-      <span class="stat-pill">1 pending</span>
+      <span class="stat-pill">Accepted projects: <span id="stat-accepted-projects">0</span></span>
+      <span class="stat-pill">Rejected projects: <span id="stat-rejected-projects">0</span></span>
+      <span class="stat-pill">Pending: <span id="stat-pending-projects">0</span></span>
     </div>
 
-    <div class="filter-tabs" aria-label="Filter by status">
-      <span class="is-active">All</span>
-      <a href="#">Accepted</a>
-      <a href="#">Rejected</a>
-      <a href="#">Pending</a>
-    </div>
+    <section class="card">
+      <h2>Pending projects</h2>
+      <p id="ar-projects-empty" class="hint" hidden>There are no pending project applications to review.</p>
+      <div id="ar-projects-table-wrap" class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Client name</th>
+              <th>Organization type</th>
+              <th>Project name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="ar-projects-tbody"></tbody>
+        </table>
+      </div>
+      <p class="hint">Click a row to load project details and record a decision below.</p>
+    </section>
 
-    <div class="dashboard-layout">
-      <section class="card">
-        <h2>Potential projects</h2>
-        <ul class="project-list">
-          <li><a href="#detail-1">Potential Project #1 — Acme Corp — <strong>Pending</strong> — Mar 12, 2026</a></li>
-          <li><a href="#detail-2">Potential Project #2 — Riverdale Logistics — <strong>Accepted</strong> — Mar 10, 2026</a></li>
-          <li><a href="#detail-3">Potential Project #3 — Bloom Retail — <strong>Accepted</strong> — Mar 8, 2026</a></li>
-          <li><a href="#detail-4">Potential Project #4 — Northwind Analytics — <strong>Rejected</strong> — Mar 5, 2026</a></li>
-        </ul>
+    <div id="ar-projects-dashboard" class="dashboard-layout">
+      <section class="card" id="ar-projects-detail">
+        <h2 id="ar-detail-title">Selected project</h2>
+        <dl id="ar-detail-meta" style="margin:0; display:grid; gap:0.5rem;"></dl>
       </section>
 
-      <section class="card" id="detail-1">
-        <h2>Project detail</h2>
-        <form action="#" method="post" data-confirm data-confirm-return="accept-reject-project.html">
+      <section class="card">
+        <h2>Project detail &amp; decision</h2>
+        <form id="ar-projects-form" action="#" method="post" data-confirm-return="accept-reject-project.html">
           <div class="form-grid">
             <div class="form-row">
               <label for="org-type">Organization type</label>
-              <input type="text" id="org-type" name="org_type" value="B2B" readonly>
+              <input type="text" id="org-type" name="org_type" value="" readonly>
             </div>
             <div class="form-row">
               <label for="proj-desc" class="required">Project description</label>
-              <textarea id="proj-desc" name="project_description" required>Assist with planning a phased data migration from legacy systems to cloud storage, including risk assessment and timeline.</textarea>
+              <textarea id="proj-desc" name="project_description" required></textarea>
             </div>
             <div class="form-row">
               <label for="client-contact" class="required">Client contact</label>
-              <textarea id="client-contact" name="client_contact" required>Jane Doe — jane.doe@acmecorp.example — (555) 100-2000</textarea>
+              <textarea id="client-contact" name="client_contact" required></textarea>
             </div>
             <div class="form-row">
               <label for="interview-notes" class="required">Interview notes</label>
-              <textarea id="interview-notes" name="interview_notes" required placeholder="MC interview assessment (required before decision).">Client has executive sponsor and realistic 10-week scope. Feasible for student team with TC support.</textarea>
+              <textarea id="interview-notes" name="interview_notes" required placeholder="MC interview assessment (required before decision)."></textarea>
+            </div>
+            <div class="form-row">
+              <label for="project-decision" class="required">Decision</label>
+              <select id="project-decision" name="project_decision" required>
+                <option value="">— Select decision —</option>
+                <option value="accept">Accept</option>
+                <option value="reject">Reject</option>
+              </select>
             </div>
           </div>
           <div class="btn-group">
-            <button type="submit" class="btn btn-success" name="action" value="accept" data-confirm-title="Project accepted" data-confirm-message="The project decision was recorded.">Accept</button>
-            <button type="submit" class="btn btn-danger" name="action" value="reject" data-confirm-title="Project rejected" data-confirm-message="The project decision was recorded.">Reject</button>
+            <button type="submit" class="btn btn-primary" data-confirm-title="Decision recorded" data-confirm-message="The project decision was recorded.">Save decision</button>
           </div>
         </form>
       </section>
@@ -151,6 +164,7 @@
 
     <section class="card">
       <h2>All applications (table view)</h2>
+      <p class="hint">Reflects accept/reject outcomes from this prototype session.</p>
       <div class="table-wrap">
         <table class="data-table">
           <thead>
@@ -161,32 +175,7 @@
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Acme Corp</td>
-              <td>B2B</td>
-              <td>Data migration readiness</td>
-              <td>Pending</td>
-            </tr>
-            <tr>
-              <td>Riverdale Logistics</td>
-              <td>B2B</td>
-              <td>Route optimization review</td>
-              <td>Accepted</td>
-            </tr>
-            <tr>
-              <td>Bloom Retail Co.</td>
-              <td>B2C</td>
-              <td>Inventory dashboard</td>
-              <td>Accepted</td>
-            </tr>
-            <tr>
-              <td>Northwind Analytics</td>
-              <td>B2B</td>
-              <td>Full ERP replacement</td>
-              <td>Rejected</td>
-            </tr>
-          </tbody>
+          <tbody id="ar-all-projects-tbody"></tbody>
         </table>
       </div>
     </section>
@@ -196,6 +185,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
-  <script src="confirmation-redirect.js" defer></script>
+  <script src="accept-reject-project.js" defer></script>
 </body>
 </html>

@@ -631,6 +631,27 @@ table.data-table {
   background: var(--iu-crimson-000);
 }
 
+.data-table tbody tr.data-table-row--selected td {
+  background: rgba(153, 0, 51, 0.08);
+  box-shadow: inset 3px 0 0 0 var(--iu-crimson);
+}
+
+/* Accept/reject tables: selection = red fill only (no left accent border) */
+#ar-students-table-wrap .data-table tbody tr.data-table-row--selected td,
+#ar-projects-table-wrap .data-table tbody tr.data-table-row--selected td {
+  background: var(--iu-crimson-muted);
+  box-shadow: none;
+}
+
+.data-table tbody tr[role="button"] {
+  cursor: pointer;
+}
+
+.data-table tbody tr[role="button"]:focus {
+  outline: 2px solid var(--iu-crimson);
+  outline-offset: -2px;
+}
+
 /* Dashboard */
 .dashboard-layout {
   display: grid;
@@ -962,6 +983,80 @@ fieldset .form-grid {
   .split-sections.form-teams-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.form-teams-workspace {
+  margin-top: 1.25rem;
+}
+
+.form-teams-layout {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .form-teams-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-teams-students-card .table-wrap {
+  max-height: min(70vh, 32rem);
+  overflow-y: auto;
+}
+
+.data-table th.checkbox-col,
+.data-table td.checkbox-col {
+  text-align: center;
+  width: 5.5rem;
+  vertical-align: middle;
+}
+
+.data-table td.checkbox-col input {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+.data-table td.checkbox-col input:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.form-teams-error {
+  color: var(--iu-danger);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0.35rem 0 0.65rem;
+}
+
+.df-detail-panel {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--iu-line);
+  border-radius: var(--radius);
+  background: var(--iu-white);
+}
+
+.df-detail-heading {
+  font-size: 1.05rem;
+  margin: 0 0 0.65rem;
+  font-weight: 700;
+  color: var(--iu-ink);
+}
+
+.df-detail-dl {
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-teams-detail-card .form-teams-project-meta {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 /* Confirmation */

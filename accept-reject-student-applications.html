@@ -93,17 +93,18 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Student Applications</h1>
-    <p class="page-subtitle">Managing Committee: review applicants, view materials, and record accept or reject decisions.</p>
+    <p class="page-subtitle">Managing Committee: review applicants, view materials, and record accept or reject decisions. Once saved, an applicant leaves this pending list (stored in your browser for this prototype).</p>
 
     <div class="stats-row" role="status">
-      <span class="stat-pill">Accepted applicants: 18</span>
-      <span class="stat-pill">Accepted projects: 6</span>
-      <span class="stat-pill">Pending: 4</span>
+      <span class="stat-pill">Accepted applicants: <span id="stat-accepted-applicants">0</span></span>
+      <span class="stat-pill">Rejected applicants: <span id="stat-rejected-applicants">0</span></span>
+      <span class="stat-pill">Pending: <span id="stat-pending-applicants">0</span></span>
     </div>
 
     <section class="card">
       <h2>Applicant list</h2>
-      <div class="table-wrap">
+      <p id="ar-students-empty" class="hint" hidden>There are no pending applications to review.</p>
+      <div id="ar-students-table-wrap" class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
@@ -114,46 +115,18 @@
               <th>Notes flag</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Alex Morgan</td>
-              <td>Junior</td>
-              <td>Information Systems</td>
-              <td>Pending</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>Jordan Lee</td>
-              <td>Senior</td>
-              <td>Finance</td>
-              <td>Accepted</td>
-              <td>Interview notes on file</td>
-            </tr>
-            <tr>
-              <td>Riley Chen</td>
-              <td>Sophomore</td>
-              <td>Accounting</td>
-              <td>Accepted</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>Sam Patel</td>
-              <td>Grad</td>
-              <td>Information Systems</td>
-              <td>Rejected</td>
-              <td>—</td>
-            </tr>
-          </tbody>
+          <tbody id="ar-students-tbody"></tbody>
         </table>
       </div>
+      <p class="hint">Click a row to select an applicant, then record a decision below.</p>
     </section>
 
-    <div class="dashboard-layout">
-      <section class="card">
-        <h2>Selected applicant: Alex Morgan</h2>
+    <div id="ar-dashboard" class="dashboard-layout">
+      <section class="card" id="ar-students-detail">
+        <h2 id="ar-detail-title">Selected applicant</h2>
         <dl style="margin:0; display:grid; gap:0.5rem;">
           <dt class="hint">Email</dt>
-          <dd style="margin:0;">amorgan@university.example</dd>
+          <dd id="ar-detail-email" style="margin:0;">—</dd>
           <dt class="hint">Application materials</dt>
           <dd style="margin:0;">
             <a href="#">View resume (PDF)</a> ·
@@ -164,7 +137,7 @@
 
       <section class="card">
         <h2>Decision</h2>
-        <form action="#" method="post" data-confirm data-confirm-return="accept-reject-student-applications.html">
+        <form id="ar-students-form" action="#" method="post" data-confirm-return="accept-reject-student-applications.html">
           <div class="form-grid">
             <div class="form-row">
               <label for="applicant-status" class="required">Status</label>
@@ -195,6 +168,6 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
-  <script src="confirmation-redirect.js" defer></script>
+  <script src="accept-reject-student-applications.js" defer></script>
 </body>
 </html>

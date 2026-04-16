@@ -1,0 +1,506 @@
+# TueThurs-3:55pm – Group 1 | Project Future – Jira Backlog & Sprint Items
+# Compiled: April 7, 2026
+# Project: SCRUM (TueThurs-3:55pm- Group1)
+# URL: https://group1threefiftyfive.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog
+
+==============================================================
+SPRINT ITEMS — SCRUM Sprint 1
+==============================================================
+
+--------------------------------------------------------------
+SCRUM-14 | Submit Project Document Draft (pic)
+--------------------------------------------------------------
+Status: IN PROGRESS
+Priority: Medium
+Assignee: Jason Tang
+Reporter: Adhvika Venkatesh
+Sprint: SCRUM Sprint 1
+Story Point Estimate: 5
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As a participant, I want to submit a project document draft so that my team's Technology Consultant (TC) can review our progress and provide actionable guidance.
+
+ACCEPTANCE CRITERIA:
+1. The system shall provide a secure portal for the participant to upload document files representing their project draft.
+2. The system shall restrict file uploads to standard document formats (e.g., .pdf, .docx) and enforce a maximum file size limit.
+3. The system shall automatically associate the uploaded project draft with the participant's specific ProjectID and generate a unique DocumentID.
+4. The system shall require the participant to confirm the submission via a prompt before finalizing the upload to prevent accidental submissions.
+5. Upon successful submission, the system shall display an on-screen confirmation message to the participant and update the document's internal status to "Pending TC Review."
+6. Upon successful submission, the system shall automatically send an email notification to the assigned Technology Consultant (TC) indicating that a new project draft is ready for review.
+7. The system shall allow the participant to view their previously submitted drafts but restrict them from deleting or overwriting a draft once it has been submitted.
+
+ATTACHMENT: Submit_Project_Document_Draft.png (02 Apr 2026, 04:33 PM)
+[Image shows a mockup of the "Submit Project Document Draft" page with:
+ - Header: "Submit Project Document Draft" (Project Future branding)
+ - Current Project: PRJ-402 (Acme Corp Data Migration)
+ - Team Role: Business Analyst
+ - Drag & Drop upload area for .PDF or .DOCX files (max size: 25MB)
+ - Browse Files button
+ - Checkbox: "I confirm this is the correct draft for TC review."
+ - Submit Draft button]
+
+
+--------------------------------------------------------------
+SCRUM-3 | Homepage (pic)
+--------------------------------------------------------------
+Status: IN PROGRESS
+Priority: None
+Assignee: Elizabeth Cai
+Reporter: Adhvika Venkatesh
+Sprint: SCRUM Sprint 1
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As a user of Project Future, I want to access a homepage with clear navigation to the main system functions so I can quickly find and complete the tasks related to projects, applications, documents, teams, and feedback.
+
+ACCEPTANCE CRITERIA / REQUIREMENTS:
+- The homepage must display the name of the system, Project Future.
+- The homepage must provide clear navigation links or buttons to the major front-end functions, like some in the sample image.
+- The homepage should include access to key pages.
+- The homepage should include brief instructions or descriptions so users understand what each option does.
+- Clicking a navigation item must take the user to the corresponding page.
+
+ATTACHMENT: IMG_8831.jpeg (02 Apr 2026, 01:35 PM)
+[Image shows a hand-drawn mockup of the Project Future homepage:
+ - Header: "Project Future" with hamburger menu (nav menu) icon
+ - Subtitle: "Welcome to Project Future! Please Select an Option Below:"
+ - Navigation buttons:
+   * Submit Client Application
+   * Submit Student Application
+   * Create Project
+   * Form Teams
+   * Submit Project Document Draft
+   * Submit Client Feedback
+ - Footer: "Footer: Contact Info | Help | Logout"]
+
+
+==============================================================
+BACKLOG ITEMS
+==============================================================
+
+--------------------------------------------------------------
+SCRUM-7 | Submit Student Application (pic)
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Tom von den Steinen
+Reporter: Jason Tang
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As a student (applicant), I want to apply for Project Future, so I can get an internship experience.
+
+ACCEPTANCE CRITERIA / REQUIREMENTS:
+- A page with a form to collect First Name (text input)
+- Collect Last Name (text input)
+- Collect Email (text input)
+- Collect Class Standing (Dropdown – Freshman, Sophomore, Junior Senior, Grad)
+- Collect Major (Dropdown – Accounting, Finance, Information Systems)
+- Allow applicants to upload a resume (PDF file upload)
+- Include a Save button
+
+ATTACHMENT: Student applicant.jpg (02 Apr 2026, 03:58 PM)
+[Image shows a hand-drawn form mockup on a whiteboard:
+ - First Name (text input box)
+ - Last Name (text input box)
+ - Email (text input box)
+ - Year/Class Standing (dropdown)
+ - Major (dropdown)
+ - Upload Resume (button)
+ - Save (button)]
+
+
+--------------------------------------------------------------
+SCRUM-8 | Accept/Reject Project (pic)
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Christopher Dvorak
+Reporter: Jason Tang
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As an MC member, I want to review submitted project applications and record my accept or reject decision, so that I can ensure only feasible, well-scoped projects are included in Project Future.
+
+ACCEPTANCE CRITERIA:
+1. The system shall display a list of all submitted project applications, each showing the client name, organization type, project name, and current status (pending, accepted, rejected).
+2. The MC member shall be able to open a project record and view all project details, including client information and interview notes recorded by the MC member who conducted the interview.
+3. The system shall require that interview notes are present on a project record before an accept/reject decision can be submitted (a decision cannot be made without an interview assessment).
+4. The MC member shall be able to select either "Accept" or "Reject" for each project and confirm the decision before it is saved.
+5. Upon rejection, the system shall automatically send a polite notification message to the client thanking them for their application and explaining that only a limited number of projects can be accepted.
+6. Upon acceptance, the system shall automatically send the client an email containing a legal authorization document as an attachment, granting student consultants permission to work on their project.
+7. The authorization document notification shall inform the client that they have a two-week window to sign and return the document via the system.
+8. The system shall provide a way for the client to upload and submit the signed authorization document.
+9. Once a decision is recorded, the project status shall update accordingly (accepted or rejected) and the decision shall not be reversible without administrator (super-user) intervention.
+10. The MC member shall only be able to act on projects assigned to their review queue; they shall not be able to alter another MC member's decisions.
+
+ATTACHMENT: Accept or Reject Project.jpeg (02 Apr 2026, 04:20 PM)
+[Image shows a hand-drawn whiteboard mockup of the Projects Dashboard:
+ - Header: "PROJECT FUTURE"
+ - "Projects Dashboard" section with filter tabs: All | Accepted | Rejected | Pending
+ - Stats: 6 total, 4 accepted, 1 rejection, 1 pending
+ - Left panel: List of projects:
+   * Potential Project #1 – [Company/Group Name] – Status – [Date]
+   * Potential Project #2 – [Company/Group Name] – Status – [Date]
+   * Potential Project #3 – [Company/Group Name] – Status – [Date]
+   * Potential Project #4 – [Company/Group Name] – Status – [Date]
+ - Right panel (detail view):
+   * Project Description (text area)
+   * Client Contact (text area)
+   * Interview Notes (text area)
+   * ACCEPT button | REJECT button]
+
+
+--------------------------------------------------------------
+SCRUM-10 | Form Teams (pic)
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Adhvika Venkatesh
+Reporter: Christopher Dvorak
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As an MC, I want to form teams by assigning students to projects so I can make sure each approved project will be worked on by the respective teams.
+
+ACCEPTANCE CRITERIA / REQUIREMENTS:
+- The form teams page must display a list of accepted students and approved projects' details.
+- The page must allow an option to assign students to a project team.
+- The page must display current team members for the projects along with their respective information.
+- The page must be able to remove, assign or update roles.
+- Team assignments should be saved.
+
+ATTACHMENT: Form Teams.jpeg (02 Apr 2026, 10:59 AM)
+[Image shows a hand-drawn form mockup:
+ - "Project Details:" section
+   * Select Project (dropdown)
+   * Client Details: ________
+   * Project ID: ________
+   * Project Info: ________
+ - "Accepted Students:" section with columns: Name | Student Info | Status | Assign Student (with checkmark/X buttons)
+ - "Current Team Members:" section with columns: Name | Role (dropdown) | Update | Remove | Member ID
+ - SAVE TEAM button]
+
+
+--------------------------------------------------------------
+SCRUM-5 | Submit Client Application
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Tom von den Steinen
+Reporter: Jason Tang
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As a client, I want to register my business with Project Future so I can get help with my business needs.
+
+ACCEPTANCE CRITERIA / REQUIREMENTS:
+- The page should display a form to collect a client's information such as the following attributes:
+  * Company Name (text input)
+  * Email (text input)
+  * Phone number (number format: +_ (_ _ _) _ _ _ _ _ _ _)
+  * Address (text input)
+  * Business Type (dropdown: B2B, B2C)
+- The page should have a Save Button.
+
+ATTACHMENT: Client.jpg (02 Apr 2026, 03:56 PM)
+[Image shows a hand-drawn form mockup on a whiteboard:
+ - Company Name (text input box)
+ - Email (text input box)
+ - Phone Number (text input box)
+ - Address (text input box)
+ - Business Type (dropdown)
+ - Save (button)]
+
+
+--------------------------------------------------------------
+SCRUM-6 | Create Project (submit project details)
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Elizabeth Cai
+Reporter: Jason Tang
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As a TC, I want to create a project by entering project details and linking it to a client so I can add the project to Project Future for review, tracking, and possible team assignment.
+
+ACCEPTANCE CRITERIA / REQUIREMENTS:
+- The page must provide a form for entering project information.
+- The form must collect the project attributes, including:
+  * Project ID
+  * Client ID
+  * Project Details
+  * Client Interview details
+  * Project status (Accept/Reject)
+- The form must allow the TC to associate the project with an existing client.
+- The page must include text input or text area fields for project details.
+- The page must include a field for recording client interview details.
+- The page must include a Save and/or Submit button.
+
+ATTACHMENT: None
+
+
+--------------------------------------------------------------
+SCRUM-9 | Accept/Reject Student Applications
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Christopher Dvorak
+Reporter: Christopher Dvorak
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As an MC member, I want to review student and alum applicants and record an accept or reject decision for each, so that I can assemble appropriately sized teams that match the number and scope of accepted projects.
+
+ACCEPTANCE CRITERIA:
+1. The system shall display a list of all student applicants, each showing the applicant's name, class standing, major, and application status (pending, accepted, rejected).
+2. The MC member shall be able to open an individual applicant record and view all submitted application materials, including the applicant's resume, application letter, and any other submitted details.
+3. The MC member shall be able to select either "Accept" or "Reject" for each applicant and confirm the decision before it is saved.
+4. Upon acceptance, the system shall automatically send the applicant a notification confirming they have been selected to participate in Project Future.
+5. Upon rejection, the system shall automatically send the applicant a respectful notification thanking them for volunteering and explaining that participation is limited.
+6. The system shall display a running count of accepted applicants and accepted projects at all times during the review process, so the MC can make informed allocation decisions without exceeding team capacity.
+7. The system shall allow the MC to accept a slightly larger pool of applicants than strictly needed, to account for potential dropouts (no hard cap is enforced by the system).
+8. The system shall flag applicants whose interview notes have been recorded (for cases where a client interview was also associated with an applicant record) so the MC has full context.
+9. Once a decision is recorded, the applicant's status shall update in the system immediately and the decision shall not be reversible without administrator (super-user) intervention.
+10. The system shall ensure that rejected applicants are not visible in the team formation workflow, so that only accepted participants are eligible to be assigned to project teams.
+
+ATTACHMENT: None
+
+
+--------------------------------------------------------------
+SCRUM-11 | Record Client Interview Details
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Adhvika Venkatesh
+Reporter: Adhvika Venkatesh
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As an MC member, I want to record client interview details so I can make decisions to approve or reject the respective projects from the clients.
+
+ACCEPTANCE CRITERIA / REQUIREMENTS:
+- The Record Client Interview Details should display a form to collect client and project information.
+- The form should include the following attributes:
+  * Project ID
+  * Project Details
+  * Client ID
+  * Interview notes
+  * Accept/Reject status
+- The page must allow the user to select the project application from the client.
+- The page must display project and client information.
+- The page should have a text box to allow notes from the interviews.
+- The page must allow an option to update or review the notes that were saved previously.
+- The page must include a submit button.
+
+ATTACHMENT: None
+
+
+--------------------------------------------------------------
+SCRUM-13 | Send "Team Formed and Next Steps" Message
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Jason Tang
+Reporter: Adhvika Venkatesh
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As an MC member, I want to send a "Team Formed and Next Steps" message to teams and clients so that all parties are officially introduced and understand the procedural requirements for kicking off the project.
+
+ACCEPTANCE CRITERIA:
+1. The system shall display a dashboard queue of all newly formed Project Teams that have not yet received their introductory communications.
+2. The system shall automatically generate a draft email template populated with the Client Name, Client Email, and the Names and Emails of all Participants assigned to that specific ProjectID.
+3. The system shall allow the MC member to review and manually edit the drafted message before authorizing it to be sent.
+4. The generated message template shall include standard "Next Steps" instructions, detailing how the participant team and client should schedule their initial kickoff meeting.
+5. Upon the MC member clicking "Send," the system shall immediately dispatch the email to all associated participant and client email addresses.
+6. The system shall log the timestamp of the sent message within the project record.
+7. The system shall automatically update the project status to indicate that onboarding communications are complete and the project is active.
+
+ATTACHMENT: None
+
+
+--------------------------------------------------------------
+SCRUM-12 | Submit Authorization Document
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Adhvika Venkatesh
+Reporter: Adhvika Venkatesh
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As a client, I want to upload signed authorization documents so I can verify my application, and it acts as a confirmation from my end.
+
+ACCEPTANCE CRITERIA / REQUIREMENTS:
+- The Submit Authorization Document page should allow the client to select their project.
+- The page should display project details such as:
+  * Project ID
+  * Project Name
+  * Client ID
+  * Client Name
+  * Authorization Document upload
+- The page must have an option to upload required files and should only accept pdf files.
+- The page must show the uploaded document once completed.
+- The page must have a submit button and confirmation when submitted.
+- The document should be connected to the respective project for future reference.
+
+ATTACHMENT: None
+
+
+--------------------------------------------------------------
+SCRUM-15 | Provide Document Feedback
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Jason Tang
+Reporter: Adhvika Venkatesh
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As a TC, I want to provide document feedback on submitted project drafts so that the participant team can refine their work and meet the final project requirements.
+
+ACCEPTANCE CRITERIA:
+1. The system shall provide a dashboard for the TC displaying all pending project drafts awaiting their review, sortable by submission date and ProjectID.
+2. The system shall allow the TC to download or securely view the submitted project draft document directly within the browser.
+3. The system shall provide a rich-text input area for the TC to record their specific TC Feedback.
+4. The system shall allow the TC to save their TC Feedback as an unpublished draft, allowing them to return and finish their review later.
+5. Upon final submission of the feedback, the system shall permanently link the TC Feedback to the specific Project Document record in the database.
+6. The system shall automatically notify the associated participant team via email that TC Feedback has been posted and is available for their review.
+7. The system shall lock the feedback record upon submission, preventing the TC from altering the TC Feedback once it has been officially dispatched to the participants.
+
+ATTACHMENT: None
+
+
+--------------------------------------------------------------
+SCRUM-16 | Submit Final Documents and Request Eval
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Christopher Dvorak
+Reporter: Adhvika Venkatesh
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As a project team participant, I want to submit the final versions of my project deliverables and formally request client evaluation, so that the project can be officially closed and the client can provide their assessment of our work.
+
+ACCEPTANCE CRITERIA:
+1. The system shall allow a participant to upload and submit the final versions of all three required deliverables: the project charter, the final report, and the final presentation.
+2. Final document submission shall only be available after the TC has reviewed and provided feedback on the draft version of each respective document.
+3. The system shall require all three final documents to be uploaded before the "Request Evaluation" action can be triggered — partial submissions shall not initiate the evaluation process.
+4. Upon submission of all final documents, the system shall automatically notify the client that the project is complete and prompt them to submit their evaluation via the system.
+5. The client evaluation form shall include both structured rating questions (covering multiple dimensions of the experience) and an open-ended comments field.
+6. The system shall automatically send a copy of the completed client feedback to the project team members once the client submits their evaluation, supporting it as a learning outcome.
+7. The TC shall not receive a copy of the final document submissions (only draft submissions trigger TC notification per system rules).
+8. The project status shall update to "Complete" once the client feedback has been submitted, closing out the project record.
+9. The system shall notify the TC that a final version has been submitted (without attaching a copy), so the TC is aware the project has moved to closure.
+10. A super-user (Bikar / administrator) shall be able to view all submitted final documents and client evaluations at any time for oversight and program assessment purposes.
+
+ATTACHMENT: None
+
+
+--------------------------------------------------------------
+SCRUM-17 | Submit Client Feedback
+--------------------------------------------------------------
+Status: TO DO
+Priority: Medium
+Assignee: Elizabeth Cai
+Reporter: Adhvika Venkatesh
+Sprint: None
+Story Point Estimate: None
+Parent: None
+Labels: None
+Due Date: None
+
+DESCRIPTION:
+As a client, I want to submit feedback about a project and the team's work so I can evaluate the outcome and provide comments for Project Future.
+
+ACCEPTANCE CRITERIA / REQUIREMENTS:
+- The page must provide a form for a client to submit feedback for a project.
+- The form must collect the feedback attributes identified in the class diagram, including:
+  * Project ID
+  * Client Feedback
+  * Other Comments
+- The page must allow the client to identify which project the feedback is for.
+- The page must include a text area for detailed client feedback.
+- The page must include an additional field for other comments.
+- The page must include a Submit or Save button.
+- If any required field is missing, the page must display an error or validation message.
+- After successful submission, the page must display a confirmation message.
+
+ATTACHMENT: None
+
+
+==============================================================
+SUMMARY
+==============================================================
+
+Total Items: 14
+Sprint 1 Items (2): SCRUM-14, SCRUM-3
+Backlog Items (12): SCRUM-7, SCRUM-8, SCRUM-10, SCRUM-5, SCRUM-6, SCRUM-9, SCRUM-11, SCRUM-13, SCRUM-12, SCRUM-15, SCRUM-16, SCRUM-17
+
+Items with Attachments/Images:
+- SCRUM-14: Submit_Project_Document_Draft.png
+- SCRUM-3: IMG_8831.jpeg
+- SCRUM-7: Student applicant.jpg
+- SCRUM-8: Accept or Reject Project.jpeg
+- SCRUM-10: Form Teams.jpeg
+- SCRUM-5: Client.jpg
+
+Team Members Referenced:
+- Tom von den Steinen (TS)
+- Elizabeth Cai (EC)
+- Adhvika Venkatesh (AV)
+- Christopher Dvorak (CD)
+- Jason Tang (JT)

@@ -93,127 +93,68 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Form Teams</h1>
-    <p class="page-subtitle">Assign accepted students to approved projects, update roles, and save team composition.</p>
+    <p class="page-subtitle">Choose an open project, select students and one team leader on the left, then save. Completed teams and assigned students are removed from future picks (this prototype stores that in your browser).</p>
 
-    <form action="#" method="post" data-confirm data-confirm-return="form-teams.html">
+    <form id="form-teams-form" action="#" method="post" data-confirm-return="form-teams.html">
       <section class="card">
-        <h2>Project details</h2>
-        <div class="form-grid">
+        <h2>Select project</h2>
+        <p id="form-teams-no-teams" class="hint" hidden>Every approved project already has a team assigned.</p>
+        <p id="form-teams-intro-hint" class="hint">Choose a project to see its details and the pool of students still available for teams.</p>
+        <div id="form-teams-select-row" class="form-grid">
           <div class="form-row">
             <label for="select-project" class="required">Select project</label>
-            <select id="select-project" name="project_id" required>
+            <select id="select-project" name="project_id">
               <option value="">— Select —</option>
-              <option value="prj-402">PRJ-402 — Acme Corp Data Migration</option>
-              <option value="prj-410">PRJ-410 — Bloom Retail Inventory</option>
             </select>
-          </div>
-          <div class="form-row">
-            <label for="client-details">Client details</label>
-            <input type="text" id="client-details" name="client_details" value="Acme Corp — jane.doe@acmecorp.example" readonly>
-          </div>
-          <div class="form-row">
-            <label for="project-id-display">Project ID</label>
-            <input type="text" id="project-id-display" name="project_id_display" value="PRJ-402" readonly>
-          </div>
-          <div class="form-row">
-            <label for="project-info">Project info</label>
-            <textarea id="project-info" name="project_info" readonly>Phased migration plan, stakeholder map, and weekly checkpoints with TC.</textarea>
           </div>
         </div>
       </section>
 
-      <div class="split-sections">
-        <section class="card">
-          <h2>Accepted students</h2>
-          <div class="table-wrap">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Student info</th>
-                  <th>Assigned a team</th>
-                  <th>Assign</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Jordan Lee</td>
-                  <td>jlee@university.example</td>
-                  <td>Senior · Finance</td>
-                  <td>Yes</td>
-                  <td>
-                    <button type="button" class="btn btn-success" style="padding:0.35rem 0.6rem; font-size:0.85rem;">&#10003;</button>
-                    <button type="button" class="btn btn-danger" style="padding:0.35rem 0.6rem; font-size:0.85rem;">&#10005;</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Riley Chen</td>
-                  <td>rchen@university.example</td>
-                  <td>Sophomore · Accounting</td>
-                  <td>Yes</td>
-                  <td>
-                    <button type="button" class="btn btn-success" style="padding:0.35rem 0.6rem; font-size:0.85rem;">&#10003;</button>
-                    <button type="button" class="btn btn-danger" style="padding:0.35rem 0.6rem; font-size:0.85rem;">&#10005;</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="hint">Use ✓ to add an applicant to the selected project’s roster.</p>
-        </section>
+      <div id="form-teams-workspace" class="form-teams-workspace" hidden>
+        <div class="form-teams-layout">
+          <section class="card form-teams-students-card">
+            <h2>Accepted students</h2>
+            <p id="form-teams-no-students" class="hint" hidden>There are no unassigned students left.</p>
+            <div id="form-teams-student-error" class="form-teams-error" role="alert" hidden></div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Student info</th>
+                    <th class="checkbox-col">On team</th>
+                    <th class="checkbox-col">Team leader</th>
+                  </tr>
+                </thead>
+                <tbody id="form-teams-student-tbody"></tbody>
+              </table>
+            </div>
+            <p class="hint">Check <strong>On team</strong> for everyone joining this project. Check <strong>Team leader</strong> for exactly one of those students.</p>
+          </section>
 
-        <section class="card">
-          <h2>Current team members</h2>
-          <div class="table-wrap">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Role</th>
-                  <th>Update</th>
-                  <th>Remove</th>
-                  <th>Member ID</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Jordan Lee</td>
-                  <td>jlee@university.example</td>
-                  <td>
-                    <select name="role_m1" aria-label="Role for Jordan Lee">
-                      <option value="pm">Project Lead</option>
-                      <option value="ba" selected>Business Analyst</option>
-                      <option value="dev">Technical Analyst</option>
-                    </select>
-                  </td>
-                  <td><button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.6rem; font-size:0.85rem;" data-confirm-title="Role updated" data-confirm-message="The team member role was updated.">Update</button></td>
-                  <td><button type="submit" class="btn btn-outline" style="padding:0.35rem 0.6rem; font-size:0.85rem; color: var(--pf-danger); border-color: var(--pf-danger);" data-confirm-title="Member removed" data-confirm-message="The team member was removed from the roster.">Remove</button></td>
-                  <td>MEM-1001</td>
-                </tr>
-                <tr>
-                  <td>Riley Chen</td>
-                  <td>rchen@university.example</td>
-                  <td>
-                    <select name="role_m2" aria-label="Role for Riley Chen">
-                      <option value="pm">Project Lead</option>
-                      <option value="ba">Business Analyst</option>
-                      <option value="dev" selected>Technical Analyst</option>
-                    </select>
-                  </td>
-                  <td><button type="submit" class="btn btn-secondary" style="padding:0.35rem 0.6rem; font-size:0.85rem;" data-confirm-title="Role updated" data-confirm-message="The team member role was updated.">Update</button></td>
-                  <td><button type="submit" class="btn btn-outline" style="padding:0.35rem 0.6rem; font-size:0.85rem; color: var(--pf-danger); border-color: var(--pf-danger);" data-confirm-title="Member removed" data-confirm-message="The team member was removed from the roster.">Remove</button></td>
-                  <td>MEM-1002</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+          <section class="card form-teams-detail-card">
+            <h2>Project details</h2>
+            <div id="form-teams-project-meta" class="form-grid form-teams-project-meta">
+              <div class="form-row">
+                <label for="client-details">Client details</label>
+                <input type="text" id="client-details" name="client_details" value="" readonly>
+              </div>
+              <div class="form-row">
+                <label for="project-id-display">Project ID</label>
+                <input type="text" id="project-id-display" name="project_id_display" value="" readonly>
+              </div>
+              <div class="form-row">
+                <label for="project-info">Project info</label>
+                <textarea id="project-info" name="project_info" readonly></textarea>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
 
-      <div class="btn-group">
-        <button type="submit" class="btn btn-primary" data-confirm-title="Team saved" data-confirm-message="Team composition was saved.">Save team</button>
+      <div id="form-teams-actions" class="btn-group" hidden>
+        <button type="submit" class="btn btn-primary" data-confirm-title="Team saved" data-confirm-message="Team composition was saved.">Save team members</button>
       </div>
     </form>
   </main>
@@ -222,6 +163,7 @@
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
+  <script src="form-teams.js" defer></script>
   <script src="confirmation-redirect.js" defer></script>
 </body>
 </html>

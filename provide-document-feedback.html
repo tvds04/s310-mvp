@@ -93,11 +93,17 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Provide Document Feedback</h1>
-    <p class="page-subtitle">Technology Consultant: review pending drafts, add feedback, save a draft, or submit final feedback to the team.</p>
+    <p class="page-subtitle">Technology Consultant: review pending drafts, add feedback, save a draft, or submit final feedback to the team. Submitting final feedback removes that draft from the pending queue (stored in your browser for this prototype).</p>
+
+    <div class="stats-row" role="status">
+      <span class="stat-pill">Pending drafts: <span id="df-stat-pending">0</span></span>
+      <span class="stat-pill">Feedback submitted: <span id="df-stat-submitted">0</span></span>
+    </div>
 
     <section class="card">
       <h2>Pending project drafts</h2>
-      <div class="table-wrap">
+      <p id="df-empty" class="hint" hidden>There are no pending drafts awaiting TC feedback.</p>
+      <div id="df-table-wrap" class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
@@ -108,39 +114,25 @@
               <th>View</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>2026-04-04</td>
-              <td>PRJ-402</td>
-              <td>DOC-7781</td>
-              <td>Charter_Draft_v2.docx</td>
-              <td><a href="#">Open / download</a></td>
-            </tr>
-            <tr>
-              <td>2026-04-02</td>
-              <td>PRJ-410</td>
-              <td>DOC-7802</td>
-              <td>Report_Draft_v1.pdf</td>
-              <td><a href="#">Open / download</a></td>
-            </tr>
-          </tbody>
+          <tbody id="df-pending-tbody"></tbody>
         </table>
       </div>
+      <p class="hint">Click a row to select a draft, then add feedback below. <strong>Submit feedback</strong> finalizes and removes it from this list; <strong>Save draft</strong> does not.</p>
     </section>
 
-    <form class="card" action="#" method="post" data-confirm data-confirm-return="provide-document-feedback.html">
-      <div class="form-grid">
-        <div class="form-row">
-          <label for="review-doc" class="required">Select draft to review</label>
-          <select id="review-doc" name="document_id" required>
-            <option value="">— Select —</option>
-            <option value="doc-7781">DOC-7781 — PRJ-402 — Charter_Draft_v2.docx</option>
-            <option value="doc-7802">DOC-7802 — PRJ-410 — Report_Draft_v1.pdf</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="tc-feedback" class="required">TC feedback</label>
-          <textarea id="tc-feedback" class="feedback-area" name="tc_feedback" required placeholder="Specific, actionable feedback for the participant team."></textarea>
+    <form id="df-form" class="card" action="#" method="post" data-confirm-return="provide-document-feedback.html">
+      <h2>Record feedback</h2>
+      <div id="df-dashboard" class="dashboard-layout">
+        <section id="df-detail" class="df-detail-panel" hidden>
+          <h3 id="df-detail-title" class="df-detail-heading">Selected draft</h3>
+          <dl id="df-detail-meta" class="df-detail-dl"></dl>
+        </section>
+
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="tc-feedback" class="required">TC feedback</label>
+            <textarea id="tc-feedback" class="feedback-area" name="tc_feedback" required placeholder="Specific, actionable feedback for the participant team."></textarea>
+          </div>
         </div>
       </div>
       <div class="btn-group">
@@ -148,12 +140,31 @@
         <button type="submit" class="btn btn-primary" name="action" value="submit" data-confirm-title="Feedback submitted" data-confirm-message="Your feedback was sent to the team in this prototype.">Submit feedback</button>
       </div>
     </form>
+
+    <section class="card">
+      <h2>All drafts (table view)</h2>
+      <p class="hint">Status reflects feedback submitted in this prototype session.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Submission date</th>
+              <th>Project ID</th>
+              <th>Document ID</th>
+              <th>File</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="df-all-tbody"></tbody>
+        </table>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <a href="#">Contact Info</a>
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
-  <script src="confirmation-redirect.js" defer></script>
+  <script src="provide-document-feedback.js" defer></script>
 </body>
 </html>

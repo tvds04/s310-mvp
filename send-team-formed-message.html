@@ -93,10 +93,67 @@
   </header>
   <main id="main" class="page-wrap">
     <h1 class="page-title">Send “Team Formed and Next Steps” Message</h1>
-    <p class="page-subtitle">Review the auto-generated draft, edit as needed, then send to the client and all assigned participants.</p>
+    <p class="page-subtitle">Review the auto-generated draft, edit as needed, then send to the client and all assigned participants. After you send, that team leaves this queue (stored in your browser for this prototype).</p>
+
+    <div class="stats-row" role="status">
+      <span class="stat-pill">Awaiting send: <span id="stm-stat-pending">0</span></span>
+      <span class="stat-pill">Messages sent: <span id="stm-stat-sent">0</span></span>
+    </div>
 
     <section class="card">
       <h2>Teams awaiting introductory email</h2>
+      <p id="stm-empty" class="hint" hidden>There are no teams waiting for this message.</p>
+      <div id="stm-table-wrap" class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Client</th>
+              <th>Team formed</th>
+              <th>Message sent</th>
+            </tr>
+          </thead>
+          <tbody id="stm-pending-tbody"></tbody>
+        </table>
+      </div>
+      <p class="hint">Click a row to load that team’s recipients and message below, then send.</p>
+    </section>
+
+    <form id="stm-form" class="card" action="#" method="post" data-confirm-return="send-team-formed-message.html">
+      <h2>Compose message</h2>
+      <div id="stm-dashboard" class="dashboard-layout">
+        <section class="df-detail-panel">
+          <h3 class="df-detail-heading">Selected team</h3>
+          <dl id="stm-detail-meta" class="df-detail-dl"></dl>
+        </section>
+
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="client-name">Client name (auto-filled)</label>
+            <input type="text" id="client-name" name="client_name" value="" readonly>
+          </div>
+          <div class="form-row">
+            <label for="client-email">Client email (auto-filled)</label>
+            <input type="email" id="client-email" name="client_email" value="" readonly>
+          </div>
+          <div class="form-row">
+            <label for="participants">Participant names &amp; emails (auto-filled)</label>
+            <textarea id="participants" name="participants" readonly rows="4"></textarea>
+          </div>
+          <div class="form-row feedback-area">
+            <label for="message-body" class="required">Message (editable)</label>
+            <textarea id="message-body" name="message_body" required></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="submit" class="btn btn-primary" data-confirm-title="Message sent" data-confirm-message="The team formed message was queued for delivery in this prototype.">Send</button>
+      </div>
+    </form>
+
+    <section class="card">
+      <h2>All teams (summary)</h2>
+      <p class="hint">Message sent status reflects sends in this prototype session.</p>
       <div class="table-wrap">
         <table class="data-table">
           <thead>
@@ -107,75 +164,16 @@
               <th>Message sent</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>PRJ-402</td>
-              <td>Acme Corp</td>
-              <td>Apr 6, 2026</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>PRJ-410</td>
-              <td>Bloom Retail</td>
-              <td>Apr 1, 2026</td>
-              <td>Yes — Apr 2, 2026</td>
-            </tr>
-          </tbody>
+          <tbody id="stm-all-tbody"></tbody>
         </table>
       </div>
     </section>
-
-    <form class="card" action="#" method="post" data-confirm data-confirm-return="send-team-formed-message.html" data-confirm-title="Message sent" data-confirm-message="The team formed message was queued for delivery in this prototype.">
-      <div class="form-grid">
-        <div class="form-row">
-          <label for="queue-project" class="required">Project</label>
-          <select id="queue-project" name="project_id" required>
-            <option value="prj-402">PRJ-402 — Acme Corp</option>
-            <option value="prj-410">PRJ-410 — Bloom Retail</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="client-name">Client name (auto-filled)</label>
-          <input type="text" id="client-name" name="client_name" value="Acme Corp" readonly>
-        </div>
-        <div class="form-row">
-          <label for="client-email">Client email (auto-filled)</label>
-          <input type="email" id="client-email" name="client_email" value="jane.doe@acmecorp.example" readonly>
-        </div>
-        <div class="form-row">
-          <label for="participants">Participant names &amp; emails (auto-filled)</label>
-          <textarea id="participants" name="participants" readonly rows="4">Jordan Lee — jlee@university.example
-Riley Chen — rchen@university.example
-Alex Morgan — amorgan@university.example</textarea>
-        </div>
-        <div class="form-row feedback-area">
-          <label for="message-body" class="required">Message (editable)</label>
-          <textarea id="message-body" name="message_body" required>Subject: Project Future — Your team is formed (PRJ-402)
-
-Dear Acme Corp team and student participants,
-
-Your Project Future consulting team for PRJ-402 (Acme Corp Data Migration) is now officially formed.
-
-Next steps:
-1. Within one week, schedule a kickoff meeting with your client sponsor and Technology Consultant.
-2. Share agendas in advance and confirm roles (project lead, business analyst, technical analyst).
-3. Establish a recurring check-in cadence and document decisions in your shared workspace.
-
-We are excited to see your work begin. Reply to this thread if you need scheduling support.
-
-— Project Future Managing Committee</textarea>
-        </div>
-      </div>
-      <div class="btn-group">
-        <button type="submit" class="btn btn-primary">Send</button>
-      </div>
-    </form>
   </main>
   <footer class="site-footer">
     <a href="#">Contact Info</a>
     <a href="#">Help</a>
     <a href="index.html">Logout</a>
   </footer>
-  <script src="confirmation-redirect.js" defer></script>
+  <script src="send-team-formed-message.js" defer></script>
 </body>
 </html>
