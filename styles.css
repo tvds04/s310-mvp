@@ -107,6 +107,179 @@ a:hover {
   color: var(--iu-ink);
 }
 
+/* Presentation slide tracker (index.html only) */
+.slide-tracker {
+  position: relative;
+  z-index: 60;
+  background: var(--iu-ink);
+  color: var(--iu-white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.8125rem;
+}
+
+.slide-tracker-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.slide-tracker-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-right: 0.25rem;
+}
+
+.slide-tracker-steps {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slide-tracker-steps li {
+  margin: 0;
+}
+
+.slide-tracker-steps a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  color: var(--iu-white);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.slide-tracker-steps a:hover {
+  color: var(--iu-white);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.slide-tracker-steps a.slide-tracker__link--current {
+  background: var(--iu-crimson);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.slide-tracker-num {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.tools-used-figure {
+  margin: 1.5rem 0 0;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.tools-used-figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.tools-used-caption {
+  margin: 1rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--iu-muted);
+}
+
+.tools-used-back {
+  margin: 1.5rem 0 0;
+  color: var(--iu-muted);
+}
+
+.tools-used-back-sep {
+  margin: 0 0.35rem;
+}
+
+/* Team 1 title slide (title-slide.html) */
+.title-slide-page {
+  max-width: 48rem;
+}
+
+.title-slide-intro {
+  margin-bottom: 0;
+}
+
+.title-slide-intro .home-hero {
+  margin-bottom: 0;
+}
+
+.title-slide-brand .home-title {
+  margin-bottom: 0;
+}
+
+.title-slide-label {
+  margin: 1.5rem 0 0.35rem;
+  font-family: var(--font-mono);
+  font-size: clamp(1.125rem, 3vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--iu-muted);
+  text-align: center;
+}
+
+.title-slide-team {
+  margin: 0.35rem 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  color: var(--iu-crimson);
+  text-align: center;
+}
+
+.title-slide-names {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  max-width: 28rem;
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: var(--iu-ink);
+  text-align: center;
+}
+
+.title-slide-names li {
+  margin: 0;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--iu-line);
+}
+
+.title-slide-names li:last-child {
+  border-bottom: none;
+}
+
+.tools-used-figure--logo-only {
+  padding-bottom: 1.25rem;
+}
+
+.tools-used-figure--logo-only img {
+  max-width: 50%;
+}
+
+.tools-used-figure--logo-only .tools-used-logo-follow {
+  margin-top: 1.5rem;
+}
+
 /* Site header — Rivet-style white bar + crimson rule (iu.edu global header treatment) */
 .site-header {
   position: relative;

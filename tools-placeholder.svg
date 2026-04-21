@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" role="img" aria-labelledby="t">
+  <title id="t">Placeholder image  replace with Cursor logo</title>
+  <rect width="320" height="200" fill="#e2e7e9"/>
+  <rect x="16" y="16" width="288" height="168" fill="#f8f9fa" stroke="#4c5a69" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="160" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#4c5a69">Logo placeholder</text>
+</svg>
