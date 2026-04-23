@@ -119,43 +119,45 @@
       <p class="hint">Click a row to load that project, then complete notes and submit.</p>
     </section>
 
-    <form id="rci-form" class="card" action="#" method="post" data-confirm-return="record-client-interview.html">
-      <h2>Interview record</h2>
+    <form id="rci-form" action="#" method="post" data-confirm-return="record-client-interview.html">
       <div id="rci-dashboard" class="dashboard-layout">
-        <section class="df-detail-panel">
-          <h3 class="df-detail-heading">Selected application</h3>
-          <dl id="rci-detail-meta" class="df-detail-dl"></dl>
+        <section class="card">
+          <h2>Selected application</h2>
+          <dl id="rci-detail-meta" style="margin:0; display:grid; gap:0.5rem;"></dl>
         </section>
-        <div class="form-grid">
-          <div class="form-row">
-            <label for="project-id" class="required">Project ID</label>
-            <input type="text" id="project-id" name="project_id" required value="" readonly>
+        <section class="card">
+          <h2>Interview record</h2>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="project-id" class="required">Project ID</label>
+              <input type="text" id="project-id" name="project_id" required value="" readonly>
+            </div>
+            <div class="form-row">
+              <label for="client-id" class="required">Client ID</label>
+              <input type="text" id="client-id" name="client_id" required value="" readonly>
+            </div>
+            <div class="form-row">
+              <label for="project-details" class="required">Project details</label>
+              <textarea id="project-details" name="project_details" required></textarea>
+            </div>
+            <div class="form-row">
+              <label for="interview-notes" class="required">Interview notes</label>
+              <textarea id="interview-notes" name="interview_notes" required placeholder="Detailed notes from the client interview."></textarea>
+            </div>
+            <div class="form-row">
+              <label for="status" class="required">Accept / reject status</label>
+              <select id="status" name="status" required>
+                <option value="">— Select —</option>
+                <option value="pending">Pending</option>
+                <option value="accept">Accept</option>
+                <option value="reject">Reject</option>
+              </select>
+            </div>
           </div>
-          <div class="form-row">
-            <label for="client-id" class="required">Client ID</label>
-            <input type="text" id="client-id" name="client_id" required value="" readonly>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary" data-confirm-title="Interview details saved" data-confirm-message="Interview notes and status were recorded.">Submit</button>
           </div>
-          <div class="form-row">
-            <label for="project-details" class="required">Project details</label>
-            <textarea id="project-details" name="project_details" required></textarea>
-          </div>
-          <div class="form-row">
-            <label for="interview-notes" class="required">Interview notes</label>
-            <textarea id="interview-notes" name="interview_notes" required placeholder="Detailed notes from the client interview."></textarea>
-          </div>
-          <div class="form-row">
-            <label for="status" class="required">Accept / reject status</label>
-            <select id="status" name="status" required>
-              <option value="">— Select —</option>
-              <option value="pending">Pending</option>
-              <option value="accept">Accept</option>
-              <option value="reject">Reject</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <button type="submit" class="btn btn-primary" data-confirm-title="Interview details saved" data-confirm-message="Interview notes and status were recorded.">Submit</button>
+        </section>
       </div>
     </form>
 

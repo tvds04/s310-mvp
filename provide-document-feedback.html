@@ -120,24 +120,25 @@
       <p class="hint">Click a row to select a draft, then add feedback below. <strong>Submit feedback</strong> finalizes and removes it from this list; <strong>Save draft</strong> does not.</p>
     </section>
 
-    <form id="df-form" class="card" action="#" method="post" data-confirm-return="provide-document-feedback.html">
-      <h2>Record feedback</h2>
+    <form id="df-form" action="#" method="post" data-confirm-return="provide-document-feedback.html">
       <div id="df-dashboard" class="dashboard-layout">
-        <section id="df-detail" class="df-detail-panel" hidden>
-          <h3 id="df-detail-title" class="df-detail-heading">Selected draft</h3>
-          <dl id="df-detail-meta" class="df-detail-dl"></dl>
+        <section class="card" id="df-detail" hidden>
+          <h2 id="df-detail-title">Selected draft</h2>
+          <dl id="df-detail-meta" style="margin:0; display:grid; gap:0.5rem;"></dl>
         </section>
-
-        <div class="form-grid">
-          <div class="form-row">
-            <label for="tc-feedback" class="required">TC feedback</label>
-            <textarea id="tc-feedback" class="feedback-area" name="tc_feedback" required placeholder="Specific, actionable feedback for the participant team."></textarea>
+        <section class="card">
+          <h2>Record feedback</h2>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="tc-feedback" class="required">TC feedback</label>
+              <textarea id="tc-feedback" class="feedback-area" name="tc_feedback" required placeholder="Specific, actionable feedback for the participant team."></textarea>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <button type="submit" class="btn btn-secondary" name="action" value="draft" formnovalidate data-confirm-title="Draft saved" data-confirm-message="Your TC feedback draft was saved.">Save draft</button>
-        <button type="submit" class="btn btn-primary" name="action" value="submit" data-confirm-title="Feedback submitted" data-confirm-message="Your feedback was sent to the team in this prototype.">Submit feedback</button>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-secondary" name="action" value="draft" formnovalidate data-confirm-title="Draft saved" data-confirm-message="Your TC feedback draft was saved.">Save draft</button>
+            <button type="submit" class="btn btn-primary" name="action" value="submit" data-confirm-title="Feedback submitted" data-confirm-message="Your feedback was sent to the team in this prototype.">Submit feedback</button>
+          </div>
+        </section>
       </div>
     </form>
 

@@ -118,89 +118,90 @@
       <p class="hint">Click a row to select a project, complete the form, then Save or Submit.</p>
     </section>
 
-    <form id="scf-form" class="card" action="#" method="post" data-confirm-return="submit-client-feedback.html">
+    <form id="scf-form" action="#" method="post" data-confirm-return="submit-client-feedback.html">
       <input type="hidden" id="feedback-project-id-hidden" name="project_id" value="">
       <div id="scf-dashboard" class="dashboard-layout">
-        <section class="df-detail-panel">
-          <h3 class="df-detail-heading">Selected project</h3>
-          <dl id="scf-detail-meta" class="df-detail-dl"></dl>
+        <section class="card">
+          <h2>Selected project</h2>
+          <dl id="scf-detail-meta" style="margin:0; display:grid; gap:0.5rem;"></dl>
         </section>
-        <div class="form-grid">
-
-        <fieldset>
-          <legend style="font-weight:600; padding:0 0 0.5rem;">Structured ratings (1 = low, 5 = high)</legend>
+        <section class="card">
+          <h2>Feedback</h2>
           <div class="form-grid">
+            <fieldset>
+              <legend style="font-weight:600; padding:0 0 0.5rem;">Structured ratings (1 = low, 5 = high)</legend>
+              <div class="form-grid">
+                <div class="form-row">
+                  <label for="rate-communication" class="required">Communication &amp; responsiveness</label>
+                  <select id="rate-communication" name="rating_communication" required>
+                    <option value="">— Select —</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="rate-quality" class="required">Quality of deliverables</label>
+                  <select id="rate-quality" name="rating_quality" required>
+                    <option value="">— Select —</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="rate-timeliness" class="required">Timeliness</label>
+                  <select id="rate-timeliness" name="rating_timeliness" required>
+                    <option value="">— Select —</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="rate-professionalism" class="required">Professionalism</label>
+                  <select id="rate-professionalism" name="rating_professionalism" required>
+                    <option value="">— Select —</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="rate-overall" class="required">Overall experience</label>
+                  <select id="rate-overall" name="rating_overall" required>
+                    <option value="">— Select —</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
             <div class="form-row">
-              <label for="rate-communication" class="required">Communication &amp; responsiveness</label>
-              <select id="rate-communication" name="rating_communication" required>
-                <option value="">— Select —</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <label for="client-feedback" class="required">Client feedback</label>
+              <textarea id="client-feedback" name="client_feedback" required placeholder="Detailed feedback on the project and the team’s work."></textarea>
             </div>
             <div class="form-row">
-              <label for="rate-quality" class="required">Quality of deliverables</label>
-              <select id="rate-quality" name="rating_quality" required>
-                <option value="">— Select —</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="rate-timeliness" class="required">Timeliness</label>
-              <select id="rate-timeliness" name="rating_timeliness" required>
-                <option value="">— Select —</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="rate-professionalism" class="required">Professionalism</label>
-              <select id="rate-professionalism" name="rating_professionalism" required>
-                <option value="">— Select —</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="rate-overall" class="required">Overall experience</label>
-              <select id="rate-overall" name="rating_overall" required>
-                <option value="">— Select —</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <label for="other-comments">Other comments</label>
+              <textarea id="other-comments" name="other_comments" placeholder="Additional notes (optional)."></textarea>
             </div>
           </div>
-        </fieldset>
-
-        <div class="form-row">
-          <label for="client-feedback" class="required">Client feedback</label>
-          <textarea id="client-feedback" name="client_feedback" required placeholder="Detailed feedback on the project and the team’s work."></textarea>
-        </div>
-        <div class="form-row">
-          <label for="other-comments">Other comments</label>
-          <textarea id="other-comments" name="other_comments" placeholder="Additional notes (optional)."></textarea>
-        </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <button type="submit" class="btn btn-secondary" name="action" value="save" formnovalidate data-confirm-title="Feedback saved" data-confirm-message="Your client feedback was saved as a draft.">Save</button>
-        <button type="submit" class="btn btn-primary" name="action" value="submit" data-confirm-title="Feedback submitted" data-confirm-message="Thank you for your feedback.">Submit</button>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-secondary" name="action" value="save" formnovalidate data-confirm-title="Feedback saved" data-confirm-message="Your client feedback was saved as a draft.">Save</button>
+            <button type="submit" class="btn btn-primary" name="action" value="submit" data-confirm-title="Feedback submitted" data-confirm-message="Thank you for your feedback.">Submit</button>
+          </div>
+        </section>
       </div>
     </form>
 

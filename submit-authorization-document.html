@@ -118,38 +118,40 @@
       <p class="hint">Select a project, attach a PDF, then submit.</p>
     </section>
 
-    <form id="sad-form" class="card" action="#" method="post" enctype="multipart/form-data" data-confirm-return="submit-authorization-document.html">
-      <h2>Upload</h2>
+    <form id="sad-form" action="#" method="post" enctype="multipart/form-data" data-confirm-return="submit-authorization-document.html">
       <div id="sad-dashboard" class="dashboard-layout">
-        <section class="df-detail-panel">
-          <h3 class="df-detail-heading">Selected project</h3>
-          <dl id="sad-detail-meta" class="df-detail-dl"></dl>
+        <section class="card">
+          <h2>Selected project</h2>
+          <dl id="sad-detail-meta" style="margin:0; display:grid; gap:0.5rem;"></dl>
         </section>
-        <div class="form-grid">
-          <div class="form-row">
-            <label for="project-name" class="required">Project name</label>
-            <input type="text" id="project-name" name="project_name" required value="" readonly>
+        <section class="card">
+          <h2>Upload</h2>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="project-name" class="required">Project name</label>
+              <input type="text" id="project-name" name="project_name" required value="" readonly>
+            </div>
+            <div class="form-row">
+              <label for="project-id-field" class="required">Project ID</label>
+              <input type="text" id="project-id-field" name="project_id_field" required value="" readonly>
+            </div>
+            <div class="form-row">
+              <label for="client-id" class="required">Client ID</label>
+              <input type="text" id="client-id" name="client_id" required value="" readonly>
+            </div>
+            <div class="form-row">
+              <label for="client-name" class="required">Client name</label>
+              <input type="text" id="client-name" name="client_name" required value="" readonly>
+            </div>
+            <div class="form-row">
+              <label for="auth-pdf" class="required">Authorization document (PDF)</label>
+              <input type="file" id="auth-pdf" name="authorization_pdf" required accept=".pdf,application/pdf">
+            </div>
           </div>
-          <div class="form-row">
-            <label for="project-id-field" class="required">Project ID</label>
-            <input type="text" id="project-id-field" name="project_id_field" required value="" readonly>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary" data-confirm-title="Authorization document submitted" data-confirm-message="Your signed PDF was recorded for this prototype.">Submit</button>
           </div>
-          <div class="form-row">
-            <label for="client-id" class="required">Client ID</label>
-            <input type="text" id="client-id" name="client_id" required value="" readonly>
-          </div>
-          <div class="form-row">
-            <label for="client-name" class="required">Client name</label>
-            <input type="text" id="client-name" name="client_name" required value="" readonly>
-          </div>
-          <div class="form-row">
-            <label for="auth-pdf" class="required">Authorization document (PDF)</label>
-            <input type="file" id="auth-pdf" name="authorization_pdf" required accept=".pdf,application/pdf">
-          </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <button type="submit" class="btn btn-primary" data-confirm-title="Authorization document submitted" data-confirm-message="Your signed PDF was recorded for this prototype.">Submit</button>
+        </section>
       </div>
     </form>
 

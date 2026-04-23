@@ -119,35 +119,36 @@
       <p class="hint">Click a row to load that team’s recipients and message below, then send.</p>
     </section>
 
-    <form id="stm-form" class="card" action="#" method="post" data-confirm-return="send-team-formed-message.html">
-      <h2>Compose message</h2>
+    <form id="stm-form" action="#" method="post" data-confirm-return="send-team-formed-message.html">
       <div id="stm-dashboard" class="dashboard-layout">
-        <section class="df-detail-panel">
-          <h3 class="df-detail-heading">Selected team</h3>
-          <dl id="stm-detail-meta" class="df-detail-dl"></dl>
+        <section class="card">
+          <h2>Selected team</h2>
+          <dl id="stm-detail-meta" style="margin:0; display:grid; gap:0.5rem;"></dl>
         </section>
-
-        <div class="form-grid">
-          <div class="form-row">
-            <label for="client-name">Client name (auto-filled)</label>
-            <input type="text" id="client-name" name="client_name" value="" readonly>
+        <section class="card">
+          <h2>Compose message</h2>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="client-name">Client name (auto-filled)</label>
+              <input type="text" id="client-name" name="client_name" value="" readonly>
+            </div>
+            <div class="form-row">
+              <label for="client-email">Client email (auto-filled)</label>
+              <input type="email" id="client-email" name="client_email" value="" readonly>
+            </div>
+            <div class="form-row">
+              <label for="participants">Participant names &amp; emails (auto-filled)</label>
+              <textarea id="participants" name="participants" readonly rows="4"></textarea>
+            </div>
+            <div class="form-row feedback-area">
+              <label for="message-body" class="required">Message (editable)</label>
+              <textarea id="message-body" name="message_body" required></textarea>
+            </div>
           </div>
-          <div class="form-row">
-            <label for="client-email">Client email (auto-filled)</label>
-            <input type="email" id="client-email" name="client_email" value="" readonly>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary" data-confirm-title="Message sent" data-confirm-message="The team formed message was queued for delivery in this prototype.">Send</button>
           </div>
-          <div class="form-row">
-            <label for="participants">Participant names &amp; emails (auto-filled)</label>
-            <textarea id="participants" name="participants" readonly rows="4"></textarea>
-          </div>
-          <div class="form-row feedback-area">
-            <label for="message-body" class="required">Message (editable)</label>
-            <textarea id="message-body" name="message_body" required></textarea>
-          </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <button type="submit" class="btn btn-primary" data-confirm-title="Message sent" data-confirm-message="The team formed message was queued for delivery in this prototype.">Send</button>
+        </section>
       </div>
     </form>
 

@@ -853,9 +853,16 @@ table.data-table {
   box-shadow: inset 3px 0 0 0 var(--iu-crimson);
 }
 
-/* Accept/reject tables: selection = red fill only (no left accent border) */
+/* Selectable queue tables: selection = muted fill only (matches accept/reject project) */
 #ar-students-table-wrap .data-table tbody tr.data-table-row--selected td,
-#ar-projects-table-wrap .data-table tbody tr.data-table-row--selected td {
+#ar-projects-table-wrap .data-table tbody tr.data-table-row--selected td,
+#sad-table-wrap .data-table tbody tr.data-table-row--selected td,
+#pdd-table-wrap .data-table tbody tr.data-table-row--selected td,
+#df-table-wrap .data-table tbody tr.data-table-row--selected td,
+#fde-table-wrap .data-table tbody tr.data-table-row--selected td,
+#scf-table-wrap .data-table tbody tr.data-table-row--selected td,
+#stm-table-wrap .data-table tbody tr.data-table-row--selected td,
+#rci-table-wrap .data-table tbody tr.data-table-row--selected td {
   background: var(--iu-crimson-muted);
   box-shadow: none;
 }
@@ -876,9 +883,18 @@ table.data-table {
   gap: 1rem;
 }
 
+/* When the first panel is hidden (e.g. TC feedback before selection), span the remaining card */
+.dashboard-layout > .card[hidden] ~ .card {
+  grid-column: 1 / -1;
+}
+
 @media (max-width: 900px) {
   .dashboard-layout {
     grid-template-columns: 1fr;
+  }
+
+  .dashboard-layout > .card[hidden] ~ .card {
+    grid-column: auto;
   }
 }
 

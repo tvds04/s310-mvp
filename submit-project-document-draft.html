@@ -118,14 +118,14 @@
       <p class="hint">Click a row to select a milestone, upload your file, and submit.</p>
     </section>
 
-    <form id="pdd-form" class="card" action="#" method="post" enctype="multipart/form-data" data-confirm-return="submit-project-document-draft.html">
-      <h2>Upload</h2>
+    <form id="pdd-form" action="#" method="post" enctype="multipart/form-data" data-confirm-return="submit-project-document-draft.html">
       <div id="pdd-dashboard" class="dashboard-layout">
-        <section class="df-detail-panel">
-          <h3 class="df-detail-heading">Selected milestone</h3>
-          <dl id="pdd-detail-meta" class="df-detail-dl"></dl>
+        <section class="card">
+          <h2>Selected milestone</h2>
+          <dl id="pdd-detail-meta" style="margin:0; display:grid; gap:0.5rem;"></dl>
         </section>
-        <div>
+        <section class="card">
+          <h2>Upload</h2>
           <div class="form-grid" style="margin-bottom:1.25rem;">
             <div class="form-row">
               <label for="current-project">Current project</label>
@@ -154,10 +154,10 @@
             <input type="checkbox" id="confirm-draft" name="confirm_draft" value="1" required>
             <label for="confirm-draft" class="required" style="font-weight:500;">I confirm this is the correct draft for TC review.</label>
           </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <button type="submit" class="btn btn-primary" data-confirm-title="Draft submitted" data-confirm-message="Your document draft was recorded for TC review in this prototype.">Submit draft</button>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary" data-confirm-title="Draft submitted" data-confirm-message="Your document draft was recorded for TC review in this prototype.">Submit draft</button>
+          </div>
+        </section>
       </div>
     </form>
 

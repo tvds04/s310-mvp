@@ -118,35 +118,37 @@
       <p class="hint">Click a row to select a project, attach all three files, then request evaluation.</p>
     </section>
 
-    <form id="fde-form" class="card" action="#" method="post" enctype="multipart/form-data" data-confirm-return="submit-final-documents-request-eval.html">
-      <h2>Final files</h2>
+    <form id="fde-form" action="#" method="post" enctype="multipart/form-data" data-confirm-return="submit-final-documents-request-eval.html">
       <div id="fde-dashboard" class="dashboard-layout">
-        <section class="df-detail-panel">
-          <h3 class="df-detail-heading">Selected project</h3>
-          <dl id="fde-detail-meta" class="df-detail-dl"></dl>
+        <section class="card">
+          <h2>Selected project</h2>
+          <dl id="fde-detail-meta" style="margin:0; display:grid; gap:0.5rem;"></dl>
         </section>
-        <div class="form-grid">
-          <div class="form-row">
-            <label for="final-charter" class="required">Final project charter</label>
-            <input type="file" id="final-charter" name="final_charter" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <section class="card">
+          <h2>Final files</h2>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="final-charter" class="required">Final project charter</label>
+              <input type="file" id="final-charter" name="final_charter" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            </div>
+            <div class="form-row">
+              <label for="final-report" class="required">Final report</label>
+              <input type="file" id="final-report" name="final_report" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            </div>
+            <div class="form-row">
+              <label for="final-presentation" class="required">Final presentation</label>
+              <input type="file" id="final-presentation" name="final_presentation" required accept=".pdf,.docx,.pptx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation">
+              <p class="hint">PDF or Word for documents; PowerPoint (.pptx) allowed for presentation slides.</p>
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="confirm-all" name="confirm_all" value="1" required>
+              <label for="confirm-all" class="required" style="font-weight:500;">I confirm that TC feedback has been provided on each draft and these final files are complete.</label>
+            </div>
           </div>
-          <div class="form-row">
-            <label for="final-report" class="required">Final report</label>
-            <input type="file" id="final-report" name="final_report" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary" data-confirm-title="Final documents submitted" data-confirm-message="Your final files and evaluation request were recorded.">Request evaluation</button>
           </div>
-          <div class="form-row">
-            <label for="final-presentation" class="required">Final presentation</label>
-            <input type="file" id="final-presentation" name="final_presentation" required accept=".pdf,.docx,.pptx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation">
-            <p class="hint">PDF or Word for documents; PowerPoint (.pptx) allowed for presentation slides.</p>
-          </div>
-          <div class="checkbox-row">
-            <input type="checkbox" id="confirm-all" name="confirm_all" value="1" required>
-            <label for="confirm-all" class="required" style="font-weight:500;">I confirm that TC feedback has been provided on each draft and these final files are complete.</label>
-          </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <button type="submit" class="btn btn-primary" data-confirm-title="Final documents submitted" data-confirm-message="Your final files and evaluation request were recorded.">Request evaluation</button>
+        </section>
       </div>
     </form>
 
